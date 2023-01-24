@@ -7,7 +7,8 @@ class InstrumentsController < ApplicationController
   end
 
   def create
-    byebug
+    instrument = Instrument.create(instrument_params)
+    render json: instrument, status: :created
   end
 
 
