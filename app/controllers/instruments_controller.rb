@@ -19,6 +19,13 @@ class InstrumentsController < ApplicationController
   end
 
 
+  def destroy
+    instrument = Instrument.find(params[:id])
+    instrument.destroy
+    head :no_content
+  end
+
+
 
   private 
 
