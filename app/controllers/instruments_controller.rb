@@ -6,6 +6,11 @@ class InstrumentsController < ApplicationController
     render json: Instrument.all, status: :ok
   end
 
+  def show
+    instrument = Instrument.find(params[:id])
+    render json: instrument, status: :ok
+  end
+
   def create
     instrument = Instrument.create(instrument_params)
     render json: instrument, status: :created
