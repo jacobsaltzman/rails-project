@@ -12,6 +12,13 @@ class InstrumentsController < ApplicationController
   end
 
 
+  def update
+    instrument = Instrument.find(params[:id])
+    instrument.update(instrument_params)
+    render json: instrument, status: :ok
+  end
+
+
 
   private 
 
