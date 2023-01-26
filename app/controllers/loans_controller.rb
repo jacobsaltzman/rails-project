@@ -6,7 +6,7 @@ class LoansController < ApplicationController
   end
 
   def create
-    loan = Loan.create(loan_params)
+    loan = Loan.create!(loan_params)
     render json: loan, status: :created
   end
 

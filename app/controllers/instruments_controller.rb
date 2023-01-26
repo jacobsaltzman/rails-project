@@ -12,7 +12,7 @@ class InstrumentsController < ApplicationController
   end
 
   def create
-    instrument = Instrument.create(instrument_params)
+    instrument = Instrument.create!(instrument_params)
     render json: instrument, status: :created
   end
 
