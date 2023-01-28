@@ -10,9 +10,9 @@ function Navigation(){
       
       <div className="navbar">
         <div id="nav-links">
-        <Link to="/instruments">Browse Instruments</Link>
-        <Link to="/loans">Loan Feed</Link>
-        <Link to="/myloans">My Loans</Link>
+        <Link to="/instruments">Instruments</Link>
+        <Link to="/loans">Explore Loans</Link>
+        <Link to="/myloans">Profile</Link>
         <Link to="/about">About&nbsp;Us</Link>
 
         </div>

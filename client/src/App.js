@@ -3,6 +3,7 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Route, Routes } from "react-router-dom";
 import Footer from './components/Footer';
+import Navigation from './components/Navigation';
 
 function App() {
 
@@ -34,16 +35,15 @@ console.log(instruments, errors)
 
   return (
     <div className="App">
+      <Navigation/>
       <header className="App-header">
-          <p> testing, testing</p>
+          
       </header>
 
       <Routes>
-
         <Route/>
         <Route/>
         <Route/>
-
       </Routes>
       <Footer/>
 
