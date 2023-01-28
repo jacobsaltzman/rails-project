@@ -4,13 +4,16 @@ function Home(){
   return (
     <div id="home">
       <div id="home-top-div"> 
-      <p>Welcome to the Instrument Library</p>
+      <h2>Welcome to the Instrument Library</h2>
       </div>
+
     <section id="home-middle-section">
-      <div id="main-logo-div">Well, hello, code explorer...</div>
+      <div id="middle-logo-div">Logo goes here.
+      </div>
     </section>
+
       <div id="home-bottom-div">
-      <h5>Browse the instrument collection, hear what others have to say about their experience, loan out an item, lend the library an instrument, or create your own profile and join the musical, happiness sharing community.</h5>
+      <h5>Browse the instrument collection, hear what others have to say about their experience, or create your own profile and join the musical, happiness sharing community by loaning out an item or lending the library an instrument of your own.</h5>
       </div>
     </div>
   )

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Route, Routes } from "react-router-dom";
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
+import Home from './components/Home';
 
 function App() {
 
@@ -37,7 +38,7 @@ console.log(instruments, errors)
     <div className="App">
       <Navigation/>
       <header className="App-header">
-          
+          <Home/>
       </header>
 
       <Routes>
