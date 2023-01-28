@@ -1,5 +1,10 @@
 class LoansController < ApplicationController
 
+  def index
+    render json: Loan.all, status: :ok
+  end
+
+
   def show
     loan = Loan.find(params[:id])
     render json: loan, status: :ok
@@ -10,11 +15,24 @@ class LoansController < ApplicationController
     render json: loan, status: :created
   end
 
+  def update
+    loan = Loan.find(params[:id])
+    loan.update(loan_params)
+    render json: loan, status: :ok
+  end
+
+
+  def destroy
+    loan = Loan.find(params[:id])
+    loan.destroy
+    head :no_content
+  end
+
 
   private
 
   def loan_params
-    params.permit(:member_id, :instrument_id, :start_date, :end_date, :status)
+    params.permit(:member_id, :loan_id, :start_date, :end_date, :status)
   end
 
 
