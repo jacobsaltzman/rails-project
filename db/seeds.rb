@@ -5,104 +5,87 @@ instrument_data = [
   {
     name: Faker::Music.instrument,
     condition: "Available",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 1
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Available",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 1
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Under Repairs",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 2
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Available",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 1
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Loaned Out",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 3
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Loaned Out",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 1
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Available",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 2
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Under Repairs",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 1
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Unusable/Broken",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 1
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Under Repairs",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 1
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Available",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 3
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Available",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 2
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Loaned Out",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 1
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Available",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 1
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Available",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 1
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Available",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 1
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   },
   {
     name: Faker::Music.instrument,
     condition: "Loaned Out",
-    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
-    member_id: 1
+    description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
   }
 ]
 
