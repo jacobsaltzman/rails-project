@@ -2,6 +2,7 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Route, Routes } from "react-router-dom";
+import Footer from './components/Footer';
 
 function App() {
 
@@ -44,7 +45,7 @@ console.log(instruments, errors)
         <Route/>
 
       </Routes>
-      
+      <Footer/>
 
     </div>
   );
