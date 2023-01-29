@@ -22,7 +22,7 @@ function SignUp({ setCurrentUser }) {
                   setCurrentUser(data)
                 })
             }else {
-                r.json().then(json => setErrors(Object.entries(json.errors)))
+                r.json().then(json => setErrors(json.errors))
             }
         })
        
