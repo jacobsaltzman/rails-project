@@ -6,12 +6,14 @@ import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
+import Login from './components/Login';
 
 function App() {
 
   const [instruments, setInstruments] = useState([]);
+  const [currentUser, setCurrentUser] = useState(false);
   const [errors, setErrors] = useState(false);
-  //const [currentUser, setCurrentUser] = useState(false);
+  
 
 
 useEffect(()=> {
@@ -29,7 +31,7 @@ useEffect(()=> {
   
 }, []);
 
-console.log(instruments, errors)
+console.log(instruments, errors, currentUser)
 
 
 
@@ -48,7 +50,10 @@ console.log(instruments, errors)
 
         <Route/>
 
-        <Route/>
+        <Route
+          path='/login'
+          element={<Login setCurrentUser={setCurrentUser} />}
+        />
 
         <Route
           path='/about'
