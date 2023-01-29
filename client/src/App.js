@@ -7,6 +7,7 @@ import Navigation from './components/Navigation';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
 import Login from './components/Login';
+import SignUp from './components/Signup';
 
 function App() {
 
@@ -49,6 +50,12 @@ console.log(instruments, errors, currentUser)
         />
 
         <Route/>
+        <Route/>
+        <Route
+        path='/signup'
+        element={<SignUp setCurrentUser={setCurrentUser}/>}
+        />
+
 
         <Route
           path='/login'

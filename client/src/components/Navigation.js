@@ -15,6 +15,8 @@ function Navigation(){
         <Link to="/myloans">Profile</Link>
         <Link to="/about">About&nbsp;Us</Link>
         <Link to="/login">Login</Link>
+        <Link to="/signup">Signup</Link>
+
         </div>
 
       </div>
