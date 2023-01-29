@@ -11,7 +11,7 @@ function SignUp({ setCurrentUser }) {
     function onSubmit(e){
         e.preventDefault()
 
-        fetch(`/users`,{
+        fetch(`/members`,{
           method:'POST',
           headers:{'Content-Type': 'application/json'},
           body:JSON.stringify(formData)
