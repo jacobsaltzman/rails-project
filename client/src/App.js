@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
+import AboutUs from './components/AboutUs';
 
 function App() {
 
@@ -37,15 +38,24 @@ console.log(instruments, errors)
   return (
     <div className="App">
       <Navigation/>
-      <header className="App-header">
-          <Home/>
-      </header>
+
 
       <Routes>
+        <Route
+          path='/'
+          element={<Home/>}
+        />
+
         <Route/>
+
         <Route/>
-        <Route/>
+
+        <Route
+          path='/about'
+          element={<AboutUs/>}
+        />
       </Routes>
+      
       <Footer/>
 
     </div>
