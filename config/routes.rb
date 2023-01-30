@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  post "/login", to "sessions#create"
+  delete "/logout", to "sessions#destroy"
+
+
   resources :loans, only: [:index, :show, :create, :update, :destroy]
   resources :members, only: [:show, :create]
   resources :instruments, only: [:index, :show, :create]
