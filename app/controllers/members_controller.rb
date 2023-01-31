@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  skip_before_action :authorize, only: :create
 
   def show
     user = Member.find(params[:id])
