@@ -2,8 +2,7 @@ class MembersController < ApplicationController
   skip_before_action :authorize, only: :create
 
   def show
-    user = Member.find(params[:id])
-    render json: user, status: :ok
+    render json: @current_user, status: :ok
   end
 
   def create
