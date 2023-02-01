@@ -29,7 +29,7 @@ useEffect(()=> {
         setInstruments(data)
       })
     }else {
-      res.json().then(data => setErrors(data.error))
+      res.json().then(data => setErrors(data.errors))
     }
   })
   
