@@ -14,7 +14,10 @@ function App() {
   const [instruments, setInstruments] = useState([]);
   const [currentUser, setCurrentUser] = useState(false);
   const [errors, setErrors] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   
+  console.log(instruments, errors, currentUser)
+
 
 
 useEffect(()=> {
@@ -32,30 +35,37 @@ useEffect(()=> {
   
 }, []);
 
-console.log(instruments, errors, currentUser)
 
+
+//const updateUser = (user) => setCurrentUser(user);
+
+function handleDarkMode(e){
+  setIsDarkMode(!isDarkMode)
+}
 
 
 
 
   return (
-    <div className="App">
-      <Navigation/>
-
-
+    <div className={isDarkMode ? "App-Dark" : "App"}>
+      <Navigation isDarkMode={isDarkMode} handleDarkMode={handleDarkMode}/>
+    
+      <div id='main-content'>
       <Routes>
+
         <Route
           path='/'
           element={<Home/>}
         />
 
         <Route/>
+
         <Route/>
+
         <Route
         path='/signup'
         element={<SignUp setCurrentUser={setCurrentUser}/>}
         />
-
 
         <Route
           path='/login'
@@ -66,7 +76,10 @@ console.log(instruments, errors, currentUser)
           path='/about'
           element={<AboutUs/>}
         />
+
       </Routes>
+
+      </div>
       
       <Footer/>
 

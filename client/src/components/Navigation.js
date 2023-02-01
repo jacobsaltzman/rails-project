@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 
-function Navigation(){
+function Navigation( {handleDarkMode, isDarkMode} ){
 
 
   return(
@@ -16,7 +16,10 @@ function Navigation(){
         <Link to="/about">About&nbsp;Us</Link>
         <Link to="/login">Login</Link>
         <Link to="/signup">Signup</Link>
+        </div>
 
+        <div id="dark-button">
+          <button onClick={handleDarkMode}>{isDarkMode? 'Lightmode ☀️': 'Darkmode 🌙'} </button>
         </div>
 
       </div>
