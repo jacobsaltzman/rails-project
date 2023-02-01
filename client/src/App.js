@@ -8,6 +8,7 @@ import Home from './components/Home';
 import AboutUs from './components/AboutUs';
 import Login from './components/Login';
 import SignUp from './components/Signup';
+import MemberPage from './components/MemberPage';
 
 function App() {
 
@@ -58,7 +59,10 @@ function handleDarkMode(e){
           element={<Home/>}
         />
 
-        <Route/>
+        <Route 
+        path='/users/:id'
+        element={<MemberPage/>}
+        />
 
         <Route/>
 
