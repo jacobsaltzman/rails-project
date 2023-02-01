@@ -11,8 +11,8 @@ function Navigation( {handleDarkMode, isDarkMode} ){
       <div className="navbar">
         <div id="nav-links">
         <Link to="/instruments">Instruments</Link>
-        <Link to="/loans">Explore Loans</Link>
-        <Link to="/myloans">Profile</Link>
+        <Link to="/loans">Experiences</Link>
+        <Link to="/myloans">My Loans</Link>
         <Link to="/about">About&nbsp;Us</Link>
         <Link to="/login">Login</Link>
         <Link to="/signup">Signup</Link>
