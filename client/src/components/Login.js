@@ -31,14 +31,17 @@ function Login({ setCurrentUser }){
       if(r.ok){
           r.json().then(data => {
             setCurrentUser(data)
+            setErrors([])
             })
         }else {
-            r.json().then(json => setErrors(json.errors))
+            r.json().then(json => setErrors(json.error))
+            
         }
         setFormData({
           username:'',
           password:''
         });
+        //console.log(errors)
     })
    
 }
@@ -55,7 +58,7 @@ function Login({ setCurrentUser }){
             <input type='password' id='password-input' name='password' onChange={handleChange}  value={formData.password}></input>
             <button type="submit">Submit</button>
           </form>
-          {errors? <div>{errors}</div>:null}
+          {errors? <h6 className='errors'>{errors}</h6>:null}
           <h6>Not a member? <Link to="/signup">Signup!</Link> </h6>
       </div>
     </div>

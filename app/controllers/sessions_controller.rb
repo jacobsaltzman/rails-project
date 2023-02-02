@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       render json: user, status: :created
 
     else
-      render json: "Invalid Credentials", status: :unauthorized 
+      render json: {error: "Invalid Username or Password"}, status: :unauthorized 
     end
 
 
