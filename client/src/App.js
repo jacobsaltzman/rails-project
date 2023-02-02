@@ -9,6 +9,7 @@ import AboutUs from './components/AboutUs';
 import Login from './components/Login';
 import SignUp from './components/Signup';
 import MemberPage from './components/MemberPage';
+import Instruments from './components/instrument/Instruments';
 
 function App() {
 
@@ -64,7 +65,10 @@ function handleDarkMode(e){
         element={<MemberPage/>}
         />
 
-        <Route/>
+        <Route
+        path='/instruments'
+        element={<Instruments instruments={instruments}/>}
+        />
 
         <Route
         path='/signup'
