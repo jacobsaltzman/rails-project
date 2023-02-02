@@ -11,6 +11,7 @@ function Navigation( {currentUser, setCurrentUser, handleDarkMode, isDarkMode} )
     setCurrentUser(false)
     };
   
+    console.log(currentUser)
 
   return(
     <header>
@@ -27,7 +28,7 @@ function Navigation( {currentUser, setCurrentUser, handleDarkMode, isDarkMode} )
         <div id="signin-signout">
           {!currentUser ? <Link to="/login">Login</Link> : null}
           {!currentUser ? <Link to="/signup">Signup</Link> : null}
-          {currentUser ? <button onClick={handleLogout}>Log Out</button> : null}
+          {currentUser ? <div><h6>Welcome, {currentUser.username}</h6>   <button onClick={handleLogout}>Log Out</button> </div>: null}
         </div>
 
         <div id="dark-button">
