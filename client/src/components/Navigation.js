@@ -17,6 +17,7 @@ function Navigation( {currentUser, setCurrentUser, handleDarkMode, isDarkMode} )
       
       <div className="navbar">
         <div id="nav-links">
+        <Link to="/">Home</Link>
         <Link to="/instruments">Instruments</Link>
         <Link to="/loans">Experiences</Link>
         <Link to={`/members/${currentUser.id}`}>Account</Link>
