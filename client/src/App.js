@@ -60,7 +60,7 @@ function handleDarkMode(e){
         />
 
         <Route 
-        path='/users/:id'
+        path='/members/:id'
         element={<MemberPage/>}
         />
 
