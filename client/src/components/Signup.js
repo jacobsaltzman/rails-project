@@ -1,4 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
+
 
 function SignUp({ setCurrentUser }) {
     const [formData, setFormData] = useState({
@@ -34,7 +36,8 @@ function SignUp({ setCurrentUser }) {
       }
     return (
       <div className='signup-form'> 
-        <form id="sign-up-form" onSubmit={onSubmit}>
+        <h4>Start Your Free Membership</h4>
+        <form id="sign-up" onSubmit={onSubmit}>
           <label>
           Username
           </label>  
@@ -54,6 +57,7 @@ function SignUp({ setCurrentUser }) {
         <input type='submit' value='Sign up!' />
       </form>
       {errors? errors.map(error => <div> {error[0]} {error[1]} </div>) :null}
+      <h6>Already a member? <Link to="/login">Login</Link></h6>
       </div>
     )
 }

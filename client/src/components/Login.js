@@ -1,4 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
+
 
 
 function Login({ setCurrentUser }){
@@ -54,6 +56,7 @@ function Login({ setCurrentUser }){
             <button type="submit">Submit</button>
           </form>
           {errors? <div>{errors}</div>:null}
+          <h6>Not a member? <Link to="/signup">Signup!</Link> </h6>
       </div>
     </div>
   )
