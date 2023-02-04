@@ -18,7 +18,7 @@ function App() {
   const [errors, setErrors] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   
-  console.log(instruments, errors, currentUser)
+  console.log(errors)
 
 
 
@@ -77,7 +77,7 @@ function handleDarkMode(e){
 
         <Route
           path='/login'
-          element={<Login setCurrentUser={setCurrentUser} />}
+          element={<Login setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
         />
 
         <Route

@@ -11,7 +11,6 @@ function Navigation( {currentUser, setCurrentUser, handleDarkMode, isDarkMode} )
     setCurrentUser(false)
     };
   
-    console.log(currentUser)
 
   return(
     <header>

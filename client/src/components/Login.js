@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
-function Login({ setCurrentUser }){
+function Login({ setCurrentUser, currentUser }){
+
+  const nav = useNavigate();
 
   const [formData, setFormData] = useState({
     username:'',
@@ -32,6 +34,7 @@ function Login({ setCurrentUser }){
           r.json().then(data => {
             setCurrentUser(data)
             setErrors([])
+            nav(`/members/${data.id}`)
             })
         }else {
             r.json().then(json => setErrors(json.error))
@@ -41,7 +44,7 @@ function Login({ setCurrentUser }){
           username:'',
           password:''
         });
-        //console.log(errors)
+        
     })
    
 }
