@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 
 function Home(){
   return (
@@ -13,7 +15,7 @@ function Home(){
     </section>
 
       <div id="home-bottom-div">
-      <h5>Browse the instrument collection, hear what others have to say about their experience, or create your own profile to join the musical happiness sharing community by loaning out an item or lending the library an instrument of your own.</h5>
+      <h5>Browse the <Link to="/instruments">instruments</Link> collection, hear what others have to say about their <Link to="/loans">experiences</Link>, or create your own <Link to="/signup">profile</Link> to join the musical sharing community and start loaning out instruments from the library yourself.</h5>
       </div>
     </div>
   )
