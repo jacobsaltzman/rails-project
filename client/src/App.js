@@ -49,10 +49,10 @@ function handleDarkMode(e){
 
 
   return (
-    <div className={isDarkMode ? "App-Dark" : "App"}>
+    <div className='App'>
       <Navigation isDarkMode={isDarkMode} handleDarkMode={handleDarkMode} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
     
-      <div id='main-content'>
+      <div className={isDarkMode ? "main-content-dark" : "main-content"}>
       <Routes>
 
         <Route

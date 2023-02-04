@@ -1,24 +1,48 @@
 .App {
   text-align: center;
   min-height: 100vh;
-  background-color: #eeeeee;
-  color: black;
+  background-image: url('../src/assets/images/Musical_Background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
 }
 
-.App-Dark {
-  text-align: center;
-  min-height: 100vh;
-  background-color: #222222;
-  color: #eeeeee;
-}
-
-#main-content{
+.main-content{
   min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #eeeeee;
+  color: black;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-content-dark{
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #222222;
+  background-position: center;
+  color: #eeeeee;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#footer{
+  
 }
 
 
