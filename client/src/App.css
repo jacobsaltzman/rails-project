@@ -19,7 +19,7 @@
   padding-right: 50px;
   background-color: #eeeeee;
   color: black;
-  max-width: 90%;
+  max-width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -36,15 +36,10 @@
   background-color: #222222;
   background-position: center;
   color: #eeeeee;
-  max-width: 90%;
+  max-width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
-
-#footer{
-  
-}
-
 
 @keyframes App-logo-spin {
   from {
@@ -113,3 +108,14 @@
   border-radius: 15px;
 }
 
+#by {
+  font-size: medium;
+  color: rgb(15, 15, 15);
+  margin: auto;
+  font-family: monospace;
+}
+
+#by p:hover{
+  font-weight: 800;
+  text-decoration: underline;
+}
