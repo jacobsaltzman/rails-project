@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function SignUp({ setCurrentUser }) {
@@ -9,6 +9,7 @@ function SignUp({ setCurrentUser }) {
         password:''
     })
     const [errors, setErrors] = useState([])
+    const nav = useNavigate();
 
     function onSubmit(e){
         e.preventDefault()
@@ -22,6 +23,8 @@ function SignUp({ setCurrentUser }) {
             if(r.ok){
                 r.json().then(data => {
                   setCurrentUser(data)
+                  setErrors([])
+                  nav(`/members/${data.id}`)
                 })
             }else {
                 r.json().then(json => setErrors(json.errors))
