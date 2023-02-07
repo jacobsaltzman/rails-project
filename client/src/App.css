@@ -119,3 +119,12 @@
   font-weight: 800;
   text-decoration: underline;
 }
+
+
+#signin-signout{
+  text-align: right;
+  border-radius: 10px;
+  display: block;
+  justify-content: right;
+  margin: auto;
+}
