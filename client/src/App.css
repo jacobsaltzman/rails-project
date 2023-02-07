@@ -65,3 +65,51 @@
   height: 40vmin;
   pointer-events: none;
 }
+
+#sign-in-form {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 2px solid;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border-bottom: 4px solid;
+  color: rgb(67,173,165);
+}
+
+#sign-in-form button {
+  width: 75px;
+  margin-top: 15px;
+  text-align: center;
+  align-self: center;
+  background-color: rgba(143, 236, 236, 0.493);
+  border-radius: 15px;
+}
+
+
+
+#sign-up-form {
+  width: 150px;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  padding: 2rem;
+  margin: auto;
+  border: 2px solid;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border-bottom: 4px solid;
+  color: rgb(67,173,165);
+
+}
+
+#sign-up button {
+  width: 75px;
+  margin-top: 15px;
+  text-align: center;
+  align-self: center;
+  background-color: rgba(143, 236, 236, 0.493);
+  border-radius: 15px;
+}
+

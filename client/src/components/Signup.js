@@ -39,28 +39,31 @@ function SignUp({ setCurrentUser }) {
       }
     return (
       <div className='signup-form'> 
+        <div id='sign-up'>
         <h4>Start Your Free Membership</h4>
-        <form id="sign-up" onSubmit={onSubmit}>
+        <form id="sign-up-form" onSubmit={onSubmit}>
           <label>
-          Username
+          Username:
           </label>  
           <input type='text' name='username' value={formData.username} onChange={handleChange} />
        
         <label>
-         Email
+         Email:
          </label>
         <input type='text' name='email' value={formData.email} onChange={handleChange} />
        
         <label>
-         Password
+         Password:
          </label>
         <input type='password' name='password' value={formData.password} onChange={handleChange} />
         
        
-        <input type='submit' value='Sign up!' />
+        <button type='submit'>Sign up!</button>
       </form>
       {errors? errors.map(error => <div> {error[0]} {error[1]} </div>) :null}
       <h6>Already a member? <Link to="/login">Login</Link></h6>
+
+        </div>
       </div>
     )
 }
