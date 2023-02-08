@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
 
 
 
@@ -19,7 +20,7 @@ function InstrumentCard({instrument}){
       <h3>{name}</h3>
       <img alt={name} src={image}></img>
       <h5>Current Status: {condition}</h5> 
-      <div>{isSeen?"Click to find out more.":<div><p>Information about the {name}: {description}</p><p>Click to check out other member's experiences with the {name}</p></div>}</div>
+      <div>{isSeen?"Click to find out more.":<div><p>Information about the {name}: {description}</p><p> <Link to={`/instruments/${id}`}> Click here </Link> to check out other member's experiences with the {name}, loan it out, and more.</p></div>}</div>
       <button onClick={handleIsSeen}>{isSeen? 'More Info':'Less info'}</button>
       <div id='more-info'>
       </div>
