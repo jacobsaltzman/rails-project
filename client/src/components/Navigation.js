@@ -19,8 +19,9 @@ function Navigation( {currentUser, setCurrentUser, handleDarkMode, isDarkMode} )
         <div id="signin-signout">
             {!currentUser ? <Link to="/login">Login</Link> : null}
             {!currentUser ? <Link to="/signup">Signup</Link> : null}
-            {currentUser ? <div><h6>Welcome, {currentUser.username}</h6>   <button onClick={handleLogout}>Log Out</button> </div>: null}
             <button onClick={handleDarkMode}>{isDarkMode? '☀️': '🌙'} </button>
+            {currentUser ? <div><div id="user-greeting"><h6>Welcome, {currentUser.username}</h6></div>  <div id="logout-button"><button onClick={handleLogout}>Log Out</button> </div></div>: null}
+            
         </div>
 
         <div id="nav-links">
