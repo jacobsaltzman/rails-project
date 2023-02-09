@@ -45,6 +45,7 @@ useEffect(()=> {
       res.json()
       .then((data) =>{
         setInstruments(data)
+        setErrors(false)
       })
     }else {
       res.json().then(data => setErrors(data.errors))
