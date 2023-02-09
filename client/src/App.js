@@ -10,6 +10,7 @@ import Login from './components/Login';
 import SignUp from './components/Signup';
 import MemberPage from './components/MemberPage';
 import Instruments from './components/instrument/Instruments';
+import InstrumentPage from './components/instrument/InstrumentPage';
 
 function App() {
 
@@ -68,6 +69,11 @@ function handleDarkMode(e){
         <Route
         path='/instruments'
         element={<Instruments instruments={instruments}/>}
+        />
+
+        <Route
+        path='/instruments/:instrumentId'
+        element={<InstrumentPage instruments={instruments}/>}
         />
 
         <Route
