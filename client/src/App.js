@@ -19,8 +19,23 @@ function App() {
   const [errors, setErrors] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   
-  console.log(errors)
+  console.log(currentUser)
 
+  useEffect(() => {
+    // auto-login
+    fetch("/me")
+      .then((r) => {
+        if (r.ok) {
+          return r.json().then((user) => {
+            setCurrentUser(user);
+          });
+        }
+        throw new Error(`HTTP error: ${r.status}`);
+      })
+      .catch((error) => {
+        console.error("Error during auto-login:", error);
+      });
+  }, []);  
 
 
 useEffect(()=> {
@@ -40,8 +55,6 @@ useEffect(()=> {
 
 
 
-//const updateUser = (user) => setCurrentUser(user);
-
 function handleDarkMode(e){
   setIsDarkMode(!isDarkMode)
 }
@@ -51,7 +64,7 @@ function handleDarkMode(e){
 
   return (
     <div className='App'>
-      <Navigation isDarkMode={isDarkMode} handleDarkMode={handleDarkMode} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+      <Navigation errors={errors} isDarkMode={isDarkMode} handleDarkMode={handleDarkMode} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
     
       <div className={isDarkMode ? "main-content-dark" : "main-content"}>
       <Routes>
