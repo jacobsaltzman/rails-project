@@ -113,6 +113,7 @@
   color: rgb(15, 15, 15);
   margin: auto;
   font-family: monospace;
+  padding: 30px;
 }
 
 #by p:hover{
@@ -217,4 +218,32 @@ a{
   .main-content .instrument-card{
     background-color: #cecece;
     color: #222222;
+  }
+
+  #more-info{
+
+    display: flex;
+    justify-content: center;
+    margin: auto;
+     
+  }
+
+  .Available{
+    color: green;
+  }
+
+  .Loaned.Out{
+    color: rgb(150, 60, 0);
+  }
+
+  .Under.Repairs{
+    color: brown;
+  }
+
+  .status{
+    display: flex;
+  }
+
+  .status h6{
+    margin-left: 10px;
   }
