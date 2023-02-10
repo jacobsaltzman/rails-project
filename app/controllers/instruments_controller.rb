@@ -20,7 +20,7 @@ class InstrumentsController < ApplicationController
   private 
 
   def instrument_params
-    params.permit(:name, :condition, :image, :description, :member_id)
+    params.permit(:name, :condition, :image, :description)
   end
 
 end
