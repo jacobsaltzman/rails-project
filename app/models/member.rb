@@ -1,5 +1,5 @@
 class Member < ApplicationRecord
-  has_many :loans, dependent: :destroy
+  has_many :loans
   has_many :instruments, through: :loans
 
 
