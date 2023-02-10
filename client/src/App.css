@@ -179,11 +179,18 @@ a{
     text-align: start;
     padding: 2rem;
     margin: 10px;
-    border: 2px solid;
+    border: 1px solid;
     border-radius: 15px;
-    border-bottom: 5px solid;
+    border-bottom: 2px solid;
     font-size: smaller;
-    
+    transition: box-shadow .3s;
+  }
+
+  .instrument-card:hover{
+    border-style: ridge;
+    border-bottom: 4px solid;
+    box-shadow: #222222;
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
   }
   
   .instrument-container{
