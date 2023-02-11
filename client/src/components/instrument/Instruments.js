@@ -14,7 +14,7 @@ function Instruments({ instruments, onAddInstrument }){
 
   return(
     <div id='main-instrument-list'>
-      <button onClick={handleIsSeen}>{isSeen? 'Donate': 'Nevermind'}</button>
+      <button onClick={handleIsSeen}>{isSeen? 'Donate Now!': 'Nevermind'}</button>
       {isSeen? <div></div>: <InstrumentCreate onAddInstrument={onAddInstrument}/>}
       <h2>The comprehensive list of Instruments.</h2>
       <InstrumentContainer instruments={instruments}/>
