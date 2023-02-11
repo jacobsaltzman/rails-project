@@ -19,7 +19,6 @@ function App() {
   const [errors, setErrors] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   
-  console.log(instruments)
 
   useEffect(() => {
     // auto-login
@@ -55,10 +54,15 @@ useEffect(()=> {
 }, []);
 
 
-
 function handleDarkMode(e){
   setIsDarkMode(!isDarkMode)
 }
+
+
+function onAddInstrument(newInstrument){
+  setInstruments([...instruments, newInstrument])
+}
+
 
 
 
@@ -72,7 +76,7 @@ function handleDarkMode(e){
 
         <Route
           path='/'
-          element={<Home/>}
+          element={<Home />}
         />
 
         <Route 
@@ -82,7 +86,7 @@ function handleDarkMode(e){
 
         <Route
         path='/instruments'
-        element={<Instruments instruments={instruments}/>}
+        element={<Instruments instruments={instruments} onAddInstrument={onAddInstrument}/>}
         />
 
         <Route
