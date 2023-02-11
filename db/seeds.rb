@@ -44,7 +44,7 @@ puts "🌱 Seeding Instrument Library..."
 #   },
 #   {
 #     name: Faker::Music.instrument,
-#     condition: "Unusable/Broken",
+#     condition: "Available",
 #     description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
 #   },
 #   {
