@@ -5,7 +5,7 @@ import InstrumentCreate from "./InstrumentCreate";
 
 function Instruments({ instruments, onAddInstrument }){
 
-  const [isSeen, setIsSeen] = useState(false);
+  const [isSeen, setIsSeen] = useState(true);
 
   function handleIsSeen(e){
     setIsSeen(!isSeen)
