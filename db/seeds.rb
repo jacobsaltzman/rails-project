@@ -89,56 +89,56 @@ puts "🌱 Seeding Instrument Library..."
    }
  ]
 
- user_data = [
-   {
-     username: "Admin",
-     password: "strongpassword",
-     email: "admin@library.com"
-   },
-   {
-     username: "Jacob",
-     password: "1111",
-     email: "railsdev@google.com"
-   },
-   {
-     username: "Nikki",
-     password: "2222",
-     email: "2spheres@google.com"
-   }
- ]
+  user_data = [
+    {
+      username: "Admin",
+      password: "strongpassword",
+      email: "admin@library.com"
+    },
+    {
+      username: "Jacob",
+      password: "1111",
+      email: "railsdev@google.com"
+    },
+    {
+      username: "Nikki",
+      password: "2222",
+      email: "2spheres@google.com"
+    }
+  ]
 
- loan_data = [
-   {
-     instrument_id: 2,
-     member_id: 1,
-     returned: true,
-     experience: 'It was great'
-   },
-   {
-    instrument_id: 4,
-    member_id: 1,
-    returned: true,
-    experience: 'It was okay'
-  },
-   {
-     instrument_id: 1,
-     member_id: 2,
-     returned: true,
-     experience: 'So challenging!'
-   },
-   {
-    instrument_id: 4,
-    member_id: 2,
-    returned: true,
-    experience: 'So much fun!'
-  },
-  {
-    instrument_id: 7,
-    member_id: 2,
-    returned: true,
-    experience: 'Not for me...'
-  }
- ]
+#  loan_data = [
+#    {
+#      instrument_id: 2,
+#      member_id: 1,
+#      returned: true,
+#      experience: 'It was great'
+#    },
+#    {
+#     instrument_id: 4,
+#     member_id: 1,
+#     returned: true,
+#     experience: 'It was okay'
+#   },
+#    {
+#      instrument_id: 1,
+#      member_id: 2,
+#      returned: true,
+#      experience: 'So challenging!'
+#    },
+#    {
+#     instrument_id: 4,
+#     member_id: 2,
+#     returned: true,
+#     experience: 'So much fun!'
+#   },
+#   {
+#     instrument_id: 7,
+#     member_id: 2,
+#     returned: true,
+#     experience: 'Not for me...'
+#   }
+#  ]
 
 
  user_data.each do |attr|
