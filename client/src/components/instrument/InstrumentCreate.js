@@ -9,7 +9,7 @@ function InstrumentCreate({onAddInstrument}){
   const [errors, setErrors] = useState([])
   const[formData, setFormData] = useState({
     name: "",
-    condition: "New Arrival",
+    condition: "Coming soon!",
     image: "",
     description: ""
   })
