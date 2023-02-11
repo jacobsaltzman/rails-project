@@ -32,7 +32,7 @@ class LoansController < ApplicationController
   private
 
   def loan_params
-    params.permit(:member_id, :loan_id, :start_date, :end_date, :status)
+    params.permit(:member_id, :loan_id, :returned, :experience)
   end
 
 
