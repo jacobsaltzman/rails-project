@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_18_082825) do
+ActiveRecord::Schema.define(version: 2023_02_11_101209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,11 +27,10 @@ ActiveRecord::Schema.define(version: 2023_01_18_082825) do
   create_table "loans", force: :cascade do |t|
     t.bigint "member_id", null: false
     t.bigint "instrument_id", null: false
-    t.date "start_date"
-    t.date "end_date"
-    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "returned", default: false
+    t.string "experience"
     t.index ["instrument_id"], name: "index_loans_on_instrument_id"
     t.index ["member_id"], name: "index_loans_on_member_id"
   end
