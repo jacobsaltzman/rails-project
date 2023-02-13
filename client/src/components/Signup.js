@@ -27,7 +27,7 @@ function SignUp({ setCurrentUser }) {
                   nav(`/members/${data.id}`)
                 })
             }else {
-                r.json().then(json => setErrors(json.error))
+                r.json().then(json => setErrors(json.errors))
             }
         })
        
