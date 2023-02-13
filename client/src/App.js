@@ -82,7 +82,7 @@ function onAddInstrument(newInstrument){
 
         <Route 
         path='/members/:id'
-        element={<MemberPage/>}
+        element={<MemberPage currentUser={currentUser}/>}
         />
 
         <Route
