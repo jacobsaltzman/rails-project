@@ -1,4 +1,6 @@
 class Member < ApplicationRecord
+  has_secure_password
+  
   has_many :loans
   has_many :instruments, through: :loans
 
@@ -7,5 +9,5 @@ class Member < ApplicationRecord
   validates :username, uniqueness: true, presence: true
   validates :password, presence: true 
 
-  has_secure_password
+  
 end
