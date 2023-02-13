@@ -3,10 +3,18 @@
 
 function MemberPage({currentUser}){
 
+  let userCreationDate;
+
+   if (currentUser.created_at){
+      userCreationDate = currentUser.created_at.split('T')
+   }
+
+
 
   return(
     <div>
     <h3>{currentUser.username}</h3>
+    {userCreationDate?<p>Member since {userCreationDate[0]}</p>: ""}
 
     <h5>Current Loans</h5>
     <p>Loans with a falsey return value here.</p>
