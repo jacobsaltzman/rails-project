@@ -8,7 +8,48 @@ This project is a full stack web application built with a React frontend, Postgr
 backend that allows a user to borrow instruments from the library and share their experience with the community.
 
 
-## Code Explanation
+## Code Main Factors
+
+- A Rails API with three models:
+
+```ruby
+class Instrument < ApplicationRecord
+  has_many :loans
+  has_many :members, through: :loans
+end
+```
+
+```ruby
+class Loan < ApplicationRecord
+  belongs_to :instrument
+  belongs_to :member
+end
+```
+
+```ruby
+class Member < ApplicationRecord
+  has_many :loans
+  has_many :instruments, through: :loans
+end
+```
+
+- A _many-to-many_ relationship. implementing two _has many_ relationships and a **join table** with two foreign keys:
+
+```sql
+create_table "loans", force: :cascade do |t|
+    t.bigint "member_id"
+    t.bigint "instrument_id"
+    ...
+    t.index ["instrument_id"], name: "index_loans_on_instrument_id"
+    t.index ["member_id"], name: "index_loans_on_member_id"
+  end
+```
+
+
+
+
+- REST routes
+-
 
 
 Coming soon.
