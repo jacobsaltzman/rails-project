@@ -15,7 +15,7 @@ function Home(){
     </section>
 
       <div id="home-bottom-div">
-      <h5>Browse the instruments collection, hear what others have to say about their experiences, or become a <Link to="/signup">member</Link> to join the musical sharing community and start loaning out instruments from the library yourself.</h5>
+      <h5>Become a <Link to="/signup">member</Link> or <Link to="/login">sign in</Link> to join the musical sharing community. From there, you can browse the instruments collection, hear what others have to say about their experiences, and start loaning out instruments from the library yourself for free. </h5>
       </div>
     </div>
   )
