@@ -107,38 +107,38 @@ puts "🌱 Seeding Instrument Library..."
     }
   ]
 
- loan_data = [
-   {
-     instrument_id: 2,
-     member_id: 1,
-     returned: true,
-     experience: 'It was great'
-   },
-   {
-    instrument_id: 4,
-    member_id: 1,
-    returned: true,
-    experience: 'It was okay'
-  },
-   {
-     instrument_id: 1,
-     member_id: 2,
-     returned: true,
-     experience: 'So challenging!'
-   },
-   {
-    instrument_id: 4,
-    member_id: 2,
-    returned: true,
-    experience: 'So much fun!'
-  },
-  {
-    instrument_id: 7,
-    member_id: 2,
-    returned: true,
-    experience: 'Not for me...'
-  }
- ]
+#  loan_data = [
+#    {
+#      instrument_id: 2,
+#      member_id: 1,
+#      returned: true,
+#      experience: 'It was great'
+#    },
+#    {
+#     instrument_id: 4,
+#     member_id: 1,
+#     returned: true,
+#     experience: 'It was okay'
+#   },
+#    {
+#      instrument_id: 1,
+#      member_id: 2,
+#      returned: true,
+#      experience: 'So challenging!'
+#    },
+#    {
+#     instrument_id: 4,
+#     member_id: 2,
+#     returned: true,
+#     experience: 'So much fun!'
+#   },
+#   {
+#     instrument_id: 7,
+#     member_id: 2,
+#     returned: true,
+#     experience: 'Not for me...'
+#   }
+#  ]
 
 
  user_data.each do |attr|
@@ -151,9 +151,9 @@ puts "🌱 Seeding Instrument Library..."
     instrument.save
  end
 
- loan_data.each do |attr|
-     Loan.create(attr)
- end
+#  loan_data.each do |attr|
+#      Loan.create(attr)
+#  end
 
 puts "✅ Done seeding!"
 puts "#{Instrument.count} instruments created!"
