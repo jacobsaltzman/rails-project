@@ -1,4 +1,5 @@
 class InstrumentsController < ApplicationController
+  skip_before_action :authorize, only: :index
 
  # GET /instruments
   # return all of the instruments
