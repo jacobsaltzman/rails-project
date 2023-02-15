@@ -8,6 +8,8 @@ function InstrumentPage({instruments}){
   const instrumentArr = instruments.filter((instr) => Number(instr.id) === Number(instrumentId))
   const instrument = instrumentArr[0];
 
+  console.log(instrument)
+
 
   if (instrument) {
     const {name, condition, image, description} = instrument;

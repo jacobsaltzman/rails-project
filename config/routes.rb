@@ -4,10 +4,9 @@ Rails.application.routes.draw do
   get '/me', to: 'members#show'
   post "/signup", to: "members#create"
 
-
-  resources :loans, only: [:index, :show, :create, :update, :destroy]
-  resources :members, only: [:show, :create]
-  resources :instruments, only: [:index, :show, :create]
+  resources :instruments do
+    resources :loans
+  end
 
 
   # Routing logic: fallback requests for React Router.
