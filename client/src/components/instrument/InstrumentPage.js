@@ -1,6 +1,7 @@
 
 import React from "react";
 import { useParams } from "react-router-dom";
+import LoanCreation from "../loans/LoanCreation";
 
 function InstrumentPage({instruments}){
 
@@ -19,6 +20,7 @@ function InstrumentPage({instruments}){
         <h3>{name}</h3>
         <img alt="Instrument" src={image}></img>
         <h4>Status: {condition}</h4> 
+        {condition === "Available"? <LoanCreation/>:"Not available for borrow."}
         <p>Details: {description}</p>
   
         <h4>Read the Experiences:</h4>
