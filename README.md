@@ -122,6 +122,7 @@ This will run the frontend on [http://localhost:4000](http://localhost:4000) whi
 **Future Stretch Goals:**
 
 - Allow members to "Lend" an instrument. Instead of donating it, this will assign their ID to that instrument, allowing them to be attached to it and do things with in the future like take it back or get rewards for having a popular item.
+- Allow members to "hold" an item that is currently on loan, so they can queue to borrow. 
 - Search function for instruments and history.
 - Separate the 'experience' and 'loan' models to expand on both.
 - Add a 'locations' component, if there were multiple physical pickup locations.
