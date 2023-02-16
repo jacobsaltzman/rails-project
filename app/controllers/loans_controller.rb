@@ -33,7 +33,7 @@ class LoansController < ApplicationController
   private
 
   def loan_params
-    params.permit(:member_id, :loan_id, :returned, :experience)
+    params.permit(:member_id, :instrument_id, :returned, :experience)
   end
 
 
