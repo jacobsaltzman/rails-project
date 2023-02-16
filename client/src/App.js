@@ -64,6 +64,17 @@ function onAddInstrument(newInstrument){
   setInstruments([...instruments, newInstrument])
 }
 
+function onEditInstrument(update){
+  const updatedInstruments = instruments.map((inst) => {
+    if (inst.id === update.id) {
+      return update;
+    } else {
+      return inst;
+    }
+  });
+  setInstruments(updatedInstruments);
+}
+
 
 
 
@@ -92,7 +103,7 @@ function onAddInstrument(newInstrument){
 
         <Route
         path='/instruments/:instrumentId'
-        element={<InstrumentPage currentUser={currentUser} instruments={instruments}/>}
+        element={<InstrumentPage currentUser={currentUser} instruments={instruments} onEditInstrument={onEditInstrument}/>}
         />
 
         <Route

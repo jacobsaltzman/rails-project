@@ -1,6 +1,6 @@
 import React from 'react'
 
-function LoanCreation ({id, currentUser}){
+function LoanCreation ({id, currentUser, onEditInstrument}){
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -31,10 +31,12 @@ function LoanCreation ({id, currentUser}){
     })
     .then(response => {
       if (response.ok) {
-        //console.log(response)
-        //resp will prob need to go into the instruments array.
-        //will the updated array with "Available" gone be enough to disappear the borrow button? 
-        //Maybe should nav to account afterwards?
+        response.json()
+        .then((data) => {
+          onEditInstrument(data)
+        })
+       
+        //Maybe should nav to account
       } else {
         throw new Error('Failed to update instrument status');
       }
