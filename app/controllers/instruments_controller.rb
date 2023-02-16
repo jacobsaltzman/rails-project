@@ -18,6 +18,12 @@ class InstrumentsController < ApplicationController
     render json: instrument, status: :created
   end
 
+  def update
+    instrument = Instrument.find(params[:id])
+    instrument.update!(instrument_params)
+    render json: instrument, status: :accepted
+  end
+
 
   private 
 
