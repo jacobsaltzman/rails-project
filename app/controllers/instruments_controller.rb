@@ -2,9 +2,10 @@ class InstrumentsController < ApplicationController
   skip_before_action :authorize, only: :index
 
  # GET /instruments
-  # return all of the instruments
+  # return all of the instruments, plus the loans. 
   def index
-    render json: Instrument.all, status: :ok
+    @instruments = Instrument.all
+    render json: @instruments, include: :loans, status: :ok
   end
 
   def show
