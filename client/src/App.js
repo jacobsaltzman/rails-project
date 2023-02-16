@@ -92,7 +92,7 @@ function onAddInstrument(newInstrument){
 
         <Route
         path='/instruments/:instrumentId'
-        element={<InstrumentPage instruments={instruments}/>}
+        element={<InstrumentPage currentUser={currentUser} instruments={instruments}/>}
         />
 
         <Route
