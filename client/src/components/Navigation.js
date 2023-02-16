@@ -29,7 +29,6 @@ function Navigation( {errors, currentUser, setCurrentUser, handleDarkMode, isDar
         <div id="nav-links">
         <Link to="/">Home</Link>
         <Link to="/instruments">Instruments</Link>
-        <Link to="/loans">Experiences</Link>
         <Link to={`/members/${currentUser.id}`}>Account</Link>
         <Link to="/about">About&nbsp;Us</Link>
         </div>

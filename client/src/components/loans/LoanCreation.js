@@ -4,7 +4,12 @@ function LoanCreation (){
 
 
     return (
-      <div>Loan Creation</div>
+      <div className='loan-creation'>
+        <p>This instrument is available for borrowing.</p>
+        
+      
+      
+      </div>
     )
   
 }
