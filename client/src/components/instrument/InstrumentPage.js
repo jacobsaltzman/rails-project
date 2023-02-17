@@ -3,7 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import LoanCreation from "../loans/LoanCreation";
 
-function InstrumentPage({instruments, currentUser, onEditInstrument}){
+function InstrumentPage({instruments, currentUser, onEditInstrument, setErrors}){
 
   const {instrumentId} = useParams();
   const instrumentArr = instruments.filter((instr) => Number(instr.id) === Number(instrumentId))
@@ -18,7 +18,7 @@ function InstrumentPage({instruments, currentUser, onEditInstrument}){
         <h3>{name}</h3>
         <img alt="Instrument" src={image}></img>
         <h4>Status: {condition}</h4> 
-        {condition === "Available"? <LoanCreation id={id} currentUser={currentUser} onEditInstrument={onEditInstrument}/>:"Not available for borrow."}
+        {condition === "Available"? <LoanCreation setErrors={setErrors} id={id} currentUser={currentUser} onEditInstrument={onEditInstrument}/>:"Not available for borrow."}
         <p>Details: {description}</p>
   
         <h4>Read the Experiences:</h4>

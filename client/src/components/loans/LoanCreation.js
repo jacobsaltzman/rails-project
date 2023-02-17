@@ -1,6 +1,6 @@
 import React from 'react'
 
-function LoanCreation ({id, currentUser, onEditInstrument}){
+function LoanCreation ({id, currentUser, onEditInstrument, setErrors}){
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -16,7 +16,7 @@ function LoanCreation ({id, currentUser, onEditInstrument}){
     })
     .then(response => {
       if (response.ok) {
-        //console.log(response)
+        console.log(response.json())
         //loan resp will need to go into currentUser array
         return fetch(`/instruments/${id}`, {
           method: 'PATCH',
@@ -26,7 +26,7 @@ function LoanCreation ({id, currentUser, onEditInstrument}){
           }
         });
       } else {
-        throw new Error('Failed to create loan');
+        setErrors(response.statusText)
       }
     })
     .then(response => {
@@ -34,16 +34,16 @@ function LoanCreation ({id, currentUser, onEditInstrument}){
         response.json()
         .then((data) => {
           onEditInstrument(data)
+          setErrors(false)
         })
        
         //Maybe should nav to account
       } else {
-        throw new Error('Failed to update instrument status');
+        setErrors(response.statusText);
       }
     })
     .catch(error => {
       console.log(error)
-      //need to append any errors into html elements
     });
   };
 

@@ -18,8 +18,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(false);
   const [errors, setErrors] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
-  
-  console.log(currentUser)
+
 
   useEffect(() => {
     // auto-login
@@ -103,7 +102,7 @@ function onEditInstrument(update){
 
         <Route
         path='/instruments/:instrumentId'
-        element={<InstrumentPage currentUser={currentUser} instruments={instruments} onEditInstrument={onEditInstrument}/>}
+        element={<InstrumentPage setErrors={setErrors} currentUser={currentUser} instruments={instruments} onEditInstrument={onEditInstrument}/>}
         />
 
         <Route
