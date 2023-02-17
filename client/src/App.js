@@ -74,8 +74,11 @@ function onEditInstrument(update){
   setInstruments(updatedInstruments);
 }
 
-
-
+function onAddLoan(loan) {
+  setCurrentUser(prevState => ({
+    loans: [...prevState.loans, loan]
+  }));
+}
 
 
   return (
@@ -97,12 +100,12 @@ function onEditInstrument(update){
 
         <Route
         path='/instruments'
-        element={<Instruments instruments={instruments} onAddInstrument={onAddInstrument}/>}
+        element={<Instruments setErrors={setErrors} instruments={instruments} onAddInstrument={onAddInstrument}/>}
         />
 
         <Route
         path='/instruments/:instrumentId'
-        element={<InstrumentPage setErrors={setErrors} currentUser={currentUser} instruments={instruments} onEditInstrument={onEditInstrument}/>}
+        element={<InstrumentPage onAddLoan={onAddLoan} setErrors={setErrors} currentUser={currentUser} instruments={instruments} onEditInstrument={onEditInstrument}/>}
         />
 
         <Route
