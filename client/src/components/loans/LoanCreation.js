@@ -1,6 +1,6 @@
 import React from 'react'
 
-function LoanCreation ({id, currentUser, onEditInstrument, setErrors}){
+function LoanCreation ({id, currentUser, onEditInstrument, setErrors, onAddLoan}){
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -15,9 +15,13 @@ function LoanCreation ({id, currentUser, onEditInstrument, setErrors}){
       body: JSON.stringify({ instrument_id: id, member_id: currentUser.id })
     })
     .then(response => {
-      if (response.ok) {
-        console.log(response.json())
-        //loan resp will need to go into currentUser array
+      if (!response.ok) {
+        setErrors(response.statusText);
+      }
+      return response.json();
+    })
+      .then(loan =>{
+        onAddLoan(loan)
         return fetch(`/instruments/${id}`, {
           method: 'PATCH',
           body: JSON.stringify({ condition: 'Loaned Out' }),
@@ -25,9 +29,6 @@ function LoanCreation ({id, currentUser, onEditInstrument, setErrors}){
             'Content-Type': 'application/json'
           }
         });
-      } else {
-        setErrors(response.statusText)
-      }
     })
     .then(response => {
       if (response.ok) {
