@@ -21,7 +21,7 @@ function LoanCreation ({id, currentUser, onEditInstrument, setErrors, onAddLoan}
       return response.json();
     })
       .then(loan =>{
-        onAddLoan(loan)
+        onAddLoan(loan) 
         return fetch(`/instruments/${id}`, {
           method: 'PATCH',
           body: JSON.stringify({ condition: 'Loaned Out' }),
@@ -36,6 +36,7 @@ function LoanCreation ({id, currentUser, onEditInstrument, setErrors, onAddLoan}
         .then((data) => {
           onEditInstrument(data)
           setErrors(false)
+          alert(`Congrats on the ${data.name} hold! Please pick up the instrument within 2 days from location [x]. You can also delete the potential loan from your account page if you can't make it, that way someone else can have the opportunity to borrow it during that time. After you return the loan, you will have the opportunity to tell everyone about your experience. We hope you enjoy the ${data.name}!`)
         })
        
         //Maybe should nav to account

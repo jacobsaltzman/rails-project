@@ -7,17 +7,24 @@ function MemberPage({currentUser}){
   let instrumentNum;
 
    if (currentUser){
+      if(currentUser.created_at !== undefined){
       userCreationDate = currentUser.created_at.split('T')
-      instrumentNum = currentUser.instruments.length
+      instrumentNum = currentUser.loans.length
+      }
+      else{
+        userCreationDate = false;
+        instrumentNum = false;
+      }
    }
+   
 
 
 
   return(
     <div>
     <h3>{currentUser.username}</h3>
-    {userCreationDate?<p>Member since {userCreationDate[0]}</p>: ""}
-    {instrumentNum === 1 ? <p>You have loaned out {instrumentNum} instrument during your time as a member. Keep going! </p>:<p>You have loaned out {instrumentNum} instruments during your time as a member.</p>}
+    {!userCreationDate ? <p>loading...</p> : <p>Member since {userCreationDate[0]}</p>}
+    {!instrumentNum ? <p> loading... </p> : <p>You have loaned out {instrumentNum} instruments during your time as a member.</p>}
 
     <h5>Current Loans</h5>
     <p>Loans with a falsey return value here.</p>

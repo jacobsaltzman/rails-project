@@ -76,7 +76,9 @@ function onEditInstrument(update){
 
 function onAddLoan(loan) {
   setCurrentUser(prevState => ({
-    loans: [...prevState.loans, loan]
+    ...prevState,
+    loans: [...prevState.loans, loan],
+
   }));
 }
 
