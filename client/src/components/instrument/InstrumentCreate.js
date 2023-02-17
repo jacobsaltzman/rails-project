@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-function InstrumentCreate({onAddInstrument}){
+function InstrumentCreate({onAddInstrument, setErrors}){
 
   const nav = useNavigate();
-  const [errors, setErrors] = useState([])
+  
   const[formData, setFormData] = useState({
     name: "",
     condition: "Coming soon!",
@@ -39,7 +39,7 @@ function InstrumentCreate({onAddInstrument}){
           alert("Added to the Instrument DB! Please bring the instrument to location [x] at your earliest convenience. Our Musician Librarians will tune up the instrument so we can then start lending it out to our members. Thanks for contributing! ");
         })
     }else {
-        r.json().then(json => setErrors(json.error))
+        r.json().then((json) => setErrors(json.errors[0]))
     }
     })
   };
@@ -49,6 +49,7 @@ function InstrumentCreate({onAddInstrument}){
     <div id='create-instrument'>
       
     <form className="new-instrument-form" onSubmit={handleSubmit}>
+      
         <h4>Donate An Instrument To The Library</h4>
 
         <label>Write What Kind Of Instrument You Are Donating</label>
@@ -62,9 +63,6 @@ function InstrumentCreate({onAddInstrument}){
 
         <button type="submit">Donate</button>
       </form>
-
-      <h6>{errors}</h6>
-
     </div>
   )
 
