@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  
+  font-family: Arial, sans-serif;
 }
 
 .main-content{
@@ -22,6 +22,7 @@
   max-width: 80%;
   margin-left: auto;
   margin-right: auto;
+  background: linear-gradient(to bottom, #f9f9f9, #e9e9e9);
 }
 
 .main-content-dark{
@@ -139,6 +140,14 @@
   margin: 5px;
 }
 
+#signin-signout a {
+  transition: transform 0.2s ease-in-out;
+}
+
+#signin-signout a:hover {
+  transform: scale(1.1);
+}
+
 a{
   border-bottom: none;
   align-content: center;
@@ -186,6 +195,7 @@ a{
     font-size: smaller;
     transition: box-shadow .3s;
   }
+
 
   .instrument-card:hover{
     border-style: ridge;
