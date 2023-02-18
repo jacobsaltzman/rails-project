@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 
-function Home(){
+function Home({currentUser}){
   return (
     <div id="home">
       <div id="home-top-div"> 
@@ -15,7 +15,7 @@ function Home(){
     </section>
 
       <div id="home-bottom-div">
-      <h5>Become a <Link to="/signup">member</Link> or <Link to="/login">sign in</Link> to join the musical sharing community. From there, you can browse the instruments collection, hear what others have to say about their experiences, and start loaning out instruments from the library yourself for free. </h5>
+      {currentUser?<h5>{currentUser.username}</h5>:<h5>Become a <Link to="/signup">member</Link> or <Link to="/login">login</Link> to join the musical sharing community. From there</h5>}<h5>you can browse the instruments collection, hear what others have to say about their experiences, and start loaning out instruments from the library yourself for free. </h5>
       </div>
     </div>
   )

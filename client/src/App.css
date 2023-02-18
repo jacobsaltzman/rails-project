@@ -265,3 +265,23 @@ a{
     max-height: 250px;
     margin: auto;
   }
+
+
+
+  #home-bottom-div{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 350px;
+  justify-content: center;
+  margin: auto;
+  }
+
+  #home-bottom-div > * {
+    display: inline;
+    margin: auto;
+    font-size: 16px;
+  }
+
+  #home-middle-section{
+    padding: auto;
+  }

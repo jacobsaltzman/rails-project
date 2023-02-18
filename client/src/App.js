@@ -92,7 +92,7 @@ function onAddLoan(loan) {
 
         <Route
           path='/'
-          element={<Home />}
+          element={<Home currentUser={currentUser} />}
         />
 
         <Route 
