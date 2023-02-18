@@ -23,8 +23,8 @@ function MemberPage({currentUser}){
   return(
     <div>
     <h3>{currentUser.username}</h3>
-    {!userCreationDate ? <p>loading...</p> : <p>Member since {userCreationDate[0]}</p>}
-    {!instrumentNum ? <p> loading... </p> : <p>You have loaned out {instrumentNum} instruments during your time as a member.</p>}
+    {!userCreationDate ? <p>Thanks for being a member.</p> : <p>Member since {userCreationDate[0]}</p>}
+    {!instrumentNum ? <p> View the instruments page and borrow a loan to start a new experience. </p> : <p>You have loaned out {instrumentNum} instruments during your time as a member.</p>}
 
     <h5>Current Loans</h5>
     <p>Loans with a falsey return value here.</p>
