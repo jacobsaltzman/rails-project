@@ -1,5 +1,6 @@
 //import { useEffect, useState } from 'react'
 //import {useParams} from 'react-router-dom'
+import LoansContainer from "./loans/LoansContainer";
 
 function MemberPage({currentUser}){
 
@@ -18,19 +19,14 @@ function MemberPage({currentUser}){
    }
    
 
-
-
   return(
     <div>
     <h3>{currentUser.username}</h3>
     {!userCreationDate ? <p>Thanks for being a member.</p> : <p>Member since {userCreationDate[0]}</p>}
     {!instrumentNum ? <p> View the instruments page and borrow a loan to start a new experience. </p> : <p>You have loaned out {instrumentNum} instruments during your time as a member.</p>}
 
-    <h5>Current Loans</h5>
-    <p>Loans with a falsey return value here.</p>
-
-    <h6>Previous Loans</h6>
-    <p>Loans with a truthy return value here.</p>
+    
+    <LoansContainer currentUser={currentUser} />
     </div>
   )
 }

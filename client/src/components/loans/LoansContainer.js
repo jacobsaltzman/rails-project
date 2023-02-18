@@ -1,7 +1,8 @@
 import React from 'react'
 
-function LoansContainer (){
+function LoansContainer ({currentUser}){
 
+    console.log(currentUser)
 
     return (
       <div>LoansContainer</div>
