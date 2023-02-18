@@ -53,11 +53,15 @@ function LoanCreation ({id, currentUser, onEditInstrument, setErrors, onAddLoan}
     return (
       <div className='loan-creation'>
 
+      {currentUser?(
+        <div>
         <p>This instrument is available for loan.</p>
         <p>Click "borrow" and pick up the instrument within 2 days to start playing.</p>
-        
         <button type="button" onClick={handleSubmit}>Borrow!</button>
-
+        </div>
+      ): (
+        <h5>Login or signup to borrow this instrument.</h5>
+      )}
       
       </div>
     )
