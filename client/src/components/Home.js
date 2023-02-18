@@ -10,7 +10,7 @@ function Home({currentUser}){
       </div>
 
     <section id="home-middle-section">
-      <div id="middle-logo-div">Logo goes here.
+      <div id="middle-logo-div">
       </div>
     </section>
 
