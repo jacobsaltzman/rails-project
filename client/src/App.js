@@ -19,6 +19,7 @@ function App() {
   const [errors, setErrors] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
 
+  console.log(instruments)
 
   useEffect(() => {
     // auto-login
