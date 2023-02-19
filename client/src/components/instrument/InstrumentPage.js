@@ -8,21 +8,31 @@ function InstrumentPage({instruments, currentUser, onEditInstrument, setErrors, 
   const {instrumentId} = useParams();
   const instrumentArr = instruments.filter((instr) => Number(instr.id) === Number(instrumentId))
   const instrument = instrumentArr[0];
-
+  
 
   if (instrument) {
     const {id, name, condition, image, description} = instrument;
+    const loanArr = instrument.loans
+
+    console.log(loanArr.length !==0)
   
     return (
       <div className="individual-instrument-page">
         <h3>{name}</h3>
         <img alt="Instrument" src={image}></img>
-        <h4>Status: {condition}</h4> 
-        {condition === "Available"? <LoanCreation onAddLoan={onAddLoan} setErrors={setErrors} id={id} currentUser={currentUser} onEditInstrument={onEditInstrument}/>:"Not available for borrow."}
-        <p>Details: {description}</p>
+        <h5>Status: {condition}</h5> 
+        {condition === "Available"? <LoanCreation onAddLoan={onAddLoan} setErrors={setErrors} id={id} currentUser={currentUser} onEditInstrument={onEditInstrument}/>:<h6>Not available for borrow. Check back later.</h6>}
+        <h6>Details:</h6> <p>{description}</p>
   
+
+        <div id="individual-instrument-experiences">
         <h4>Read the Experiences:</h4>
-        <p>add the loan details</p>
+        {loanArr && loanArr.length !==0? loanArr.map((loan) =>  
+        <ul>
+        {loan.returned? <li>{loan.name} said - "{loan.experience}"</li> : <li>{loan.name} is borrowing this instrument currently.</li>}
+        </ul>)
+        :"No loan history."}
+        </div>
       </div>
     );
   } else {
