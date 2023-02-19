@@ -1,4 +1,8 @@
 class LoanSerializer < ActiveModel::Serializer
-  attributes :id, :member_id, :instrument_id, :experience, :returned, :updated_at
-  belongs_to :member
+  attributes :id, :experience, :returned, :updated_at, :name
+  belongs_to :member, serializer: MemberSerializer
+
+  def name
+    object.member.username
+  end
 end
