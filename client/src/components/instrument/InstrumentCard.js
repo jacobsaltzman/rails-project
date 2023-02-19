@@ -11,8 +11,9 @@ function InstrumentCard({instrument}){
 
   return(
     <div className="instrument-card" id={id}>
-      <h3>{name}</h3>
+      
       <img alt={name} src={image}></img>
+      <h3>{name}</h3>
       <div className="status">
       <h5>Current Status:</h5>
       <h6 className={condition}>{condition} </h6> 
