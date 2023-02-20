@@ -38,11 +38,19 @@ function InstrumentPage({instruments, currentUser, onEditInstrument, setErrors, 
 
         <div id="individual-instrument-experiences">
         <h4>Read the Experiences:</h4>
-        {loanArr && loanArr.length !==0? loanArr.map((loan) =>  
         <ul>
-        {loan.returned? <li key={loan.id}>{loan.name} said - "{loan.experience}"</li> : <li>{loan.name} is borrowing this instrument currently.</li>}
-        </ul>)
-        :"No loan history."}
+        {loanArr && loanArr.length !==0 ? loanArr.map((loan) =>  
+          <li key={loan.id}>
+            {loan.returned ? (
+              <span>{loan.name} said - "{loan.experience}"</span>
+            ) : (
+              <span>{loan.name} is borrowing this instrument currently.</span>
+            )}
+          </li>
+        ) : (
+          <li>No loan history.</li>
+        )}
+        </ul>
         </div>
 
       </div>
