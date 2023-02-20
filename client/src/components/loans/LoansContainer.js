@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import LoansCurrent from './LoansCurrent';
+import LoansPrevious from './LoansPrevious';
 
 function LoansContainer ({currentUser}){
 
@@ -24,12 +26,12 @@ function LoansContainer ({currentUser}){
       <div id='user-loans'>
 
         <div id='current-loans'>
-
+          <LoansCurrent />
         </div>
 
 
         <div id='previous-loans'>
-          
+            <LoansPrevious />
         </div>
 
 
