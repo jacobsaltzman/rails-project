@@ -40,7 +40,7 @@ function InstrumentPage({instruments, currentUser, onEditInstrument, setErrors, 
         <h4>Read the Experiences:</h4>
         {loanArr && loanArr.length !==0? loanArr.map((loan) =>  
         <ul>
-        {loan.returned? <li>{loan.name} said - "{loan.experience}"</li> : <li>{loan.name} is borrowing this instrument currently.</li>}
+        {loan.returned? <li key={loan.id}>{loan.name} said - "{loan.experience}"</li> : <li>{loan.name} is borrowing this instrument currently.</li>}
         </ul>)
         :"No loan history."}
         </div>
