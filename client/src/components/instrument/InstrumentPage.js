@@ -18,18 +18,20 @@ function InstrumentPage({instruments, currentUser, onEditInstrument, setErrors, 
   
     return (
       <div className="individual-instrument-page">
-
-        <div id="instrument-status">
-        <h5>Status: {condition}</h5> 
-        {condition === "Available"? <LoanCreation onAddLoan={onAddLoan} setErrors={setErrors} id={id} currentUser={currentUser} onEditInstrument={onEditInstrument}/>:<h6>Not available for borrow. Check back later.</h6>}
-        </div>
-
+        
         <h3>{name}</h3>
+        <h5 className={condition}> {condition} </h5> 
+        <div id="instrument-status">
+        {condition === "Available"? <LoanCreation onAddLoan={onAddLoan} setErrors={setErrors} id={id} currentUser={currentUser} onEditInstrument={onEditInstrument}/>:<p>Not available for borrow. Check back later.</p>}
+        </div>
         
         <div className="image-container">
         <img alt="Instrument" src={image}></img>
         </div>
 
+   
+
+      
         
         <div id="instrument-details">
         <h6>Details:</h6> <p>{description}</p>
@@ -37,12 +39,12 @@ function InstrumentPage({instruments, currentUser, onEditInstrument, setErrors, 
         
 
         <div id="individual-instrument-experiences">
-        <h4>Read the Experiences:</h4>
+        <h6>Read the Experiences:</h6>
         <ul>
         {loanArr && loanArr.length !==0 ? loanArr.map((loan) =>  
           <li key={loan.id}>
             {loan.returned ? (
-              <span>{loan.name} said - "{loan.experience}"</span>
+              <span>{loan.name} said - "{loan.experience}" on ({loan.loan_updated})</span>
             ) : (
               <span>{loan.name} is borrowing this instrument currently.</span>
             )}

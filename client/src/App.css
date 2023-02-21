@@ -282,8 +282,8 @@ a{
     position: relative;
     display: inline-block;
     overflow: hidden;
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
   }
   
   img {
@@ -309,3 +309,24 @@ a{
   #more-info{
     justify-content: left;
   }
+
+  .individual-instrument-page{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+  
+
+#instrument-status {
+  display: flex;
+  margin: auto;
+  padding: 20px;
+  align-items: center;
+}
+
+#instrument-status h5, h6 {
+  justify-content: center;
+}
+
+.individual-instrument-page p, li {
+  font-size: large;
+  margin-top: 3px;
+}
