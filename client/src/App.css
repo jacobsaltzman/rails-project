@@ -170,7 +170,7 @@ a{
   text-emphasis: bold;
   font-size: 20px; 
   color: rgb(252,202,100);
-  border-radius: 15%;
+  border-radius: 10%;
   }
 
   #nav-links a{
@@ -189,17 +189,14 @@ a{
     text-align: center;
     padding: 2rem;
     margin: 10px;
-    border: 1px solid;
-    border-radius: 15px;
-    border-bottom: 2px solid;
     font-size: smaller;
     transition: box-shadow .3s;
+
   }
 
 
   .instrument-card:hover{
-    border-style: ridge;
-    border-bottom: 4px solid;
+
     box-shadow: #222222;
     box-shadow: 0 0 11px rgba(33,33,33,.2);
   }
@@ -207,7 +204,6 @@ a{
   .instrument-container{
     display: flex;
     justify-content: center;
-
     flex-wrap: wrap;
   }
 
@@ -219,14 +215,10 @@ a{
   }
 
   .main-content-dark .instrument-card{
-    background-color: #cecece;
-    color: #222222;
-    border-color: #eeeeee;
-
+    color: #cecece;
   }
 
   .main-content .instrument-card{
-    background-color: #cecece;
     color: #222222;
   }
 
@@ -303,4 +295,17 @@ a{
   
   .image-container:hover img {
     transform: scale(1.1);
+  }
+
+  .instrument-name{
+    padding: auto;
+    margin: 5px;
+  }
+
+  .instrument-status{
+    padding: auto;
+  }
+
+  #more-info{
+    justify-content: left;
   }
