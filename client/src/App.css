@@ -330,3 +330,36 @@ a{
   font-size: large;
   margin-top: 3px;
 }
+
+
+.current-loan, .loan-history{
+  border-color: #222222;
+  border-style: solid;
+  border-width: .5px;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 2.5%;
+  max-width: 350px;
+  
+}
+
+.main-content-dark .current-loan, .loan-history{
+  border-color: #cecece;
+  border-style: solid;
+  border-width: .5px;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 2.5%;
+  max-width: 350px;
+}
+
+
+.loan-updated{
+  font-size: xx-small;
+}
+
+.loan-began, .loan-experience{
+  font-size: small;
+}

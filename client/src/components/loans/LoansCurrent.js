@@ -10,11 +10,11 @@ export default function LoansCurrent( {currentLoans} ) {
 
   return (
     <div id='loans-current'>
-      <h5>Current Loans:</h5>
+      <h4>Current Loans</h4>
       {currentLoans.map((loan) => (
       <div className='current-loan' key={loan.id}>
          <h5> {loan.instrumentname} </h5>
-         <p>began on {loan.loan_began} </p>
+         <p className='loan-began'>began on {loan.loan_began} </p>
           {loan.returned ? null : (
           <button onClick={() => returnLoan(loan.id)}>Return</button>
     )}

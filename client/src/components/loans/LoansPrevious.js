@@ -14,14 +14,15 @@ export default function LoansPrevious( { returnedLoans }) {
 
   return (
     <div id='loans-previous'>
-      <h5>Previous Loans:</h5>
+      <h4>Previous Loans</h4>
       {returnedLoans.map((loan) => (
       <div className='loan-history' key={loan.id}>
         <h5>{loan.instrumentname}</h5>
-        <p>borrowed on: {loan.loan_began}</p>
-        <p className='loan-experience'>your experience: "{loan.experience}"</p>
+        <p className='loan-began'>borrowed on: {loan.loan_began}</p>
+        <p className='loan-experience'>your experience: </p>
+        <h5>{loan.experience}</h5>
         <button onClick={() => handleEditMode()}>Edit</button>
-        <p className='loan-updated'>updated on: {loan.loan_updated}</p>
+        <p className='loan-updated'>(updated on: {loan.loan_updated})</p>
         
       </div>
     ))}
