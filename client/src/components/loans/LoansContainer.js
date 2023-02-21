@@ -24,7 +24,7 @@ function LoansContainer ({currentUser}){
       <div id='user-loans'>
 
         <div id='current-loans'>
-          <LoansCurrent currentLoans={currentLoans} />
+          <LoansCurrent setCurrentLoans={setCurrentLoans} currentLoans={currentLoans} />
         </div>
 
 
