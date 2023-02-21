@@ -15,7 +15,7 @@ class LoanSerializer < ActiveModel::Serializer
   end
 
   def loan_updated
-    object.updated_at.strftime("%Y-%m-%d at %H:%M")
+    object.updated_at.strftime("%Y-%m-%d")
   end
 
 end
