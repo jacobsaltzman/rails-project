@@ -176,13 +176,16 @@ a{
   #nav-links a{
     border-bottom: none;
     align-content: center;
-
     padding: 2%;
     text-align: center;
     font-size: 20px;
     color: #000000;
     font-family: 'Courier New', Courier, monospace;
+    justify-content: top;
+    margin-left: 20px;
   }
+
+  
 
   .instrument-card {
     width: 300px;
@@ -405,4 +408,15 @@ a{
 
 .new-instrument-form button:hover {
   background-color: #0069d9;
+}
+
+#donate-button{
+  background-color: rgb(67,173,165);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 35px;
 }
