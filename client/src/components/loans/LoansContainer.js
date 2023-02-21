@@ -19,19 +19,17 @@ function LoansContainer ({currentUser}){
     }
   }, [loans]);
 
-  console.log(currentLoans)
-  console.log(returnedLoans)
 
     return (
       <div id='user-loans'>
 
         <div id='current-loans'>
-          <LoansCurrent />
+          <LoansCurrent currentLoans={currentLoans} />
         </div>
 
 
         <div id='previous-loans'>
-            <LoansPrevious />
+            <LoansPrevious returnedLoans={returnedLoans} />
         </div>
 
 
