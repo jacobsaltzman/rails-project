@@ -363,3 +363,46 @@ a{
 .loan-began, .loan-experience{
   font-size: small;
 }
+
+.new-instrument-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.new-instrument-form h4 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.new-instrument-form label {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.new-instrument-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.new-instrument-form button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.new-instrument-form button:hover {
+  background-color: #0069d9;
+}
