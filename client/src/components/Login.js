@@ -37,7 +37,7 @@ function Login({ setCurrentUser, currentUser }){
             nav(`/members/${data.id}`)
             })
         }else {
-            r.json().then(json => setErrors(json.error))
+          r.json().then((err) => setErrors(err.errors));
             
         }
         setFormData({

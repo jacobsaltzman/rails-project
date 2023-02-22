@@ -39,7 +39,7 @@ function InstrumentCreate({onAddInstrument, setErrors}){
           alert("Added to the Instrument DB! Please bring the instrument to location [x] at your earliest convenience. Our Musician Librarians will tune up the instrument so we can then start lending it out to our members. Thanks for contributing! ");
         })
     }else {
-        r.json().then((json) => setErrors(json.errors[0]))
+      r.json().then((err) => setErrors(err.errors));
     }
     })
   };
