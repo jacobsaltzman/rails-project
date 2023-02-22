@@ -27,7 +27,9 @@ function SignUp({ setCurrentUser }) {
                   nav(`/members/${data.id}`)
                 })
             }else {
-              r.json().then((err) => setErrors(err.errors));
+              //r.json().then((err) => setErrors(err.errors));
+              setErrors(r.statusText);
+              //changing error read in attempt to debug Render deploy issue with signup.
             }
         })
        
