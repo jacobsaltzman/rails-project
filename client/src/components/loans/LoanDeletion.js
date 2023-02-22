@@ -35,7 +35,7 @@ function LoanDeletion( {loan, onDeleteLoan} ){
   
     return (
       <div className='loan-deletion'>
-        <button id={loan.id} type='submit' onClick={handleDeleteLoan}>X</button>
+        <button className='delete-button' id={loan.id} type='submit' onClick={handleDeleteLoan}>X <span className="delete-tooltip">Delete hold before pickup!</span></button>
       </div>
     )
   

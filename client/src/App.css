@@ -344,8 +344,22 @@ a{
   margin-bottom: 10px;
   border-radius: 2.5%;
   max-width: 350px;
-  
+  position: relative;
+  transition: box-shadow .3s;
 }
+
+.current-loan:hover{
+
+  box-shadow: #222222;
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+.loan-history:hover{
+
+  box-shadow: #222222;
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
 
 .main-content-dark .current-loan, .loan-history{
   border-color: #cecece;
@@ -419,4 +433,53 @@ a{
   cursor: pointer;
   font-size: 18px;
   margin: 35px;
+}
+
+.delete-button {
+  position: absolute;
+  top: 0rem;
+  right: 0.5rem;
+  background-color: #f44336; 
+  color: #fff; 
+  border: none;
+  display: flex;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.delete-button:hover {
+  background-color: #e53935; 
+}
+
+.delete-button:focus {
+  outline: none; 
+}
+
+.delete-button-text {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+}
+
+.delete-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.delete-button:hover .delete-tooltip {
+  opacity: 1;
 }
