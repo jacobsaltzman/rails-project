@@ -3,10 +3,6 @@ import {useState} from 'react'
 export default function LoansPrevious( { returnedLoans }) {
 
   const [isEditMode, setIsEditMode] = useState(false);
-  //const [editLoanId, setEditLoanId] = useState(null);
-
-
-  console.log(returnedLoans)
 
   function handleEditMode(){
     setIsEditMode(!isEditMode)

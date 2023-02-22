@@ -8,7 +8,7 @@ class MembersController < ApplicationController
   def create
     user = Member.create!(member_params)
     session[:member_id] = user.id
-    render json: user, status: :ok
+    render json: user, status: :created
   end
 
 
