@@ -98,7 +98,7 @@ function onAddLoan(loan) {
 
         <Route 
         path='/members/:id'
-        element={<MemberPage currentUser={currentUser}/>}
+        element={<MemberPage currentUser={currentUser} onEditInstrument={onEditInstrument}/>}
         />
 
         <Route

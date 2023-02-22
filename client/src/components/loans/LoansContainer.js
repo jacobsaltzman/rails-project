@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import LoansCurrent from './LoansCurrent';
 import LoansPrevious from './LoansPrevious';
 
-function LoansContainer ({currentUser}){
+function LoansContainer ({currentUser, onEditInstrument}){
 
   const { loans } = currentUser;
 
@@ -24,7 +24,7 @@ function LoansContainer ({currentUser}){
       <div id='user-loans'>
 
         <div id='current-loans'>
-          <LoansCurrent setCurrentLoans={setCurrentLoans} currentLoans={currentLoans} />
+          <LoansCurrent setCurrentLoans={setCurrentLoans} currentLoans={currentLoans} onEditInstrument={onEditInstrument}/>
         </div>
 
 

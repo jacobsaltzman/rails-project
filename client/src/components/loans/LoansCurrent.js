@@ -1,7 +1,7 @@
 //import {useState} from 'react'
 import LoanDeletion from './LoanDeletion'
 
-export default function LoansCurrent( {currentLoans, setCurrentLoans} ) {
+export default function LoansCurrent( {currentLoans, setCurrentLoans, onEditInstrument} ) {
 
 
 
@@ -20,7 +20,7 @@ export default function LoansCurrent( {currentLoans, setCurrentLoans} ) {
       <h4>Current Loans</h4>
       {currentLoans.map((loan) => (
       <div className='current-loan' key={loan.id}>
-        <LoanDeletion onDeleteLoan={onDeleteLoan} loan={loan}/>
+        <LoanDeletion onEditInstrument={onEditInstrument} onDeleteLoan={onDeleteLoan} loan={loan}/>
         <h5> {loan.instrumentname} </h5>
         <p className='loan-began'>began on {loan.loan_began} </p>
           {loan.returned ? null : (
