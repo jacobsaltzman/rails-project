@@ -1,12 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 
 
-function LoanDeletion({ loan, onDeleteLoan, onEditInstrument }) {
+function LoanDeletion({ setErrors, loan, onDeleteLoan, updateInstrument }) {
 
   const {id, instrument_id} = loan
-  const [errors, setErrors] = useState(false)
-
   
   const handleDeleteLoan = (e) => {
     e.preventDefault();
@@ -21,23 +19,7 @@ function LoanDeletion({ loan, onDeleteLoan, onEditInstrument }) {
       .then(res => {
         if (res.ok) {
           onDeleteLoan(id)
-          return fetch(`/instruments/${instrument_id}`, {
-            method: 'PATCH',
-            body: JSON.stringify({ condition: 'Available' }),
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          })
-        } else {
-          throw new Error('Network response was not ok');
-        }
-      })
-      .then(response => {
-        if (response.ok) {
-          response.json().then((data) => {
-            onEditInstrument(data);
-            setErrors(false);
-          });
+          updateInstrument(instrument_id)
         } else {
           throw new Error('Network response was not ok');
         }
@@ -53,7 +35,6 @@ function LoanDeletion({ loan, onDeleteLoan, onEditInstrument }) {
     return (
       <div className='loan-deletion'>
         <button className='delete-button' id={loan.id} type='submit' onClick={handleDeleteLoan}>X <span className="delete-tooltip">Delete hold before pickup!</span></button>
-        {errors && <div className="error">{errors}</div>}
       </div>
     )
   

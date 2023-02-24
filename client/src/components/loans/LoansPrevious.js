@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-export default function LoansPrevious( { returnedLoans }) {
+export default function LoansPrevious( { setErrors, returnedLoans }) {
 
   const [isEditMode, setIsEditMode] = useState(false);
 

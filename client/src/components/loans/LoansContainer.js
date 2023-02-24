@@ -5,7 +5,7 @@ import LoansPrevious from './LoansPrevious';
 function LoansContainer ({currentUser, onEditInstrument}){
 
   const { loans } = currentUser;
-
+  const [errors, setErrors] = useState(false)
 
   const [currentLoans, setCurrentLoans] = useState([]);
   const [returnedLoans, setReturnedLoans] = useState([]);
@@ -22,14 +22,14 @@ function LoansContainer ({currentUser, onEditInstrument}){
 
     return (
       <div id='user-loans'>
-
+        {errors && <div className="error">{errors}</div>}
         <div id='current-loans'>
-          <LoansCurrent setCurrentLoans={setCurrentLoans} currentLoans={currentLoans} onEditInstrument={onEditInstrument}/>
+          <LoansCurrent setErrors={setErrors} setCurrentLoans={setCurrentLoans} currentLoans={currentLoans} onEditInstrument={onEditInstrument}/>
         </div>
 
 
         <div id='previous-loans'>
-            <LoansPrevious returnedLoans={returnedLoans} />
+            <LoansPrevious setErrors={setErrors} returnedLoans={returnedLoans} />
         </div>
 
 
