@@ -1,13 +1,10 @@
 //import {useState} from 'react'
 import LoanDeletion from './LoanDeletion'
+import LoanReturn from './LoanReturn';
 
 export default function LoansCurrent( {currentLoans, setCurrentLoans, onEditInstrument,setErrors} ) {
 
 
-
-  function returnLoan(x){
-  console.log(x)
-  }
 
   function onDeleteLoan(deletedLoanId) {
     const updatedLoans = currentLoans.filter((loan) => loan.id !== deletedLoanId);
@@ -43,7 +40,7 @@ export default function LoansCurrent( {currentLoans, setCurrentLoans, onEditInst
         <h5> {loan.instrumentname} </h5>
         <p className='loan-began'>began on {loan.loan_began} </p>
           {loan.returned ? null : (
-          <button onClick={() => returnLoan(loan.id)}>Return</button>
+            <LoanReturn loan={loan} />
     )}
   </div>
 ))}
