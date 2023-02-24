@@ -82,6 +82,24 @@ function onAddLoan(loan) {
   }));
 }
 
+function onEditInstrumentLoan(loan) {
+  const updatedInstruments = instruments.map((inst) => {
+    if (inst.id === loan.instrument_id) {
+      const updatedLoans = inst.loans.map((l) => {
+        if (l.id === loan.id) {
+          return loan;
+        } else {
+          return l;
+        }
+      });
+      return { ...inst, loans: updatedLoans };
+    } else {
+      return inst;
+    }
+  });
+  setInstruments(updatedInstruments);
+}
+
 
   return (
     <div className='App'>
@@ -97,7 +115,7 @@ function onAddLoan(loan) {
 
         <Route 
         path='/members/:id'
-        element={<MemberPage currentUser={currentUser} onEditInstrument={onEditInstrument}/>}
+        element={<MemberPage onEditInstrumentLoan={onEditInstrumentLoan} currentUser={currentUser} onEditInstrument={onEditInstrument}/>}
         />
 
         <Route

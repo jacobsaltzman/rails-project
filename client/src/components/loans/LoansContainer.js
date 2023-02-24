@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import LoansCurrent from './LoansCurrent';
 import LoansPrevious from './LoansPrevious';
 
-function LoansContainer ({currentUser, onEditInstrument}){
+function LoansContainer ({currentUser, onEditInstrument, onEditInstrumentLoan}){
 
   const { loans } = currentUser;
   const [errors, setErrors] = useState(false)
@@ -38,7 +38,8 @@ function LoansContainer ({currentUser, onEditInstrument}){
           return loan;
         }
       });
-      setReturnedLoans(updatedLoans);
+      setReturnedLoans(updatedLoans); //refreshes the users returned loans experience
+      onEditInstrumentLoan(updatedLoan);  //updates the global instrument array to account for the new experience.
     }
 
     return (
