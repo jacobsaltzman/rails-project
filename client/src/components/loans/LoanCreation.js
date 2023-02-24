@@ -45,7 +45,7 @@ function LoanCreation ({id, currentUser, onEditInstrument, setErrors, onAddLoan}
       }
     })
     .catch(error => {
-      console.log(error)
+      setErrors(error)
     });
   };
 
