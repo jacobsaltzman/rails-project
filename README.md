@@ -119,6 +119,14 @@ This will run the frontend on [http://localhost:4000](http://localhost:4000) whi
 - [Flatiron School](https://flatironschool.com/)
 
 
+**Faker**
+
+This project uses the Faker gem to spin up a ton of fake instruments and data. This info fills the app to give a better sense of its purpose to the developers. For more on Faker, check out my blog post here: 
+
+- [Don't Sleep On Faker Gem](https://medium.com/@j.daniel.saltzman/dont-sleep-on-faker-gem-2cb7e425f79d)
+
+
+
 **Future Stretch Goals:**
 
 - Allow members to "Lend" an instrument. Instead of donating it, this will assign their ID to that instrument, allowing them to be attached to it and do things with in the future like take it back or get rewards for having a popular item.
