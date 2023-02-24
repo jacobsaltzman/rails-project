@@ -16,6 +16,7 @@ function LoansContainer ({currentUser, onEditInstrument, onEditInstrumentLoan}){
     const returned = loans.filter((loan) => loan.returned);
     setCurrentLoans(current);
     setReturnedLoans(returned);
+    console.log(loans)
     }
   }, [loans]);
 
