@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-function LoanReturn( {loan, updateInstrument, onReturnLoan} ){
+function LoanReturn( {loan, updateInstrument, onReturnLoan, setErrors} ){
 
   const [formData, setFormData] = useState();
 
@@ -22,17 +22,20 @@ function LoanReturn( {loan, updateInstrument, onReturnLoan} ){
         experience: formData,
         returned: true
     }),
-  }) //refactor for errors.
-    .then((r) => r.json())
-    .then((updatedItems) => {
-    onReturnLoan(updatedItems)
-    updateInstrument(loan.instrument_id)
-    console.log(updatedItems)
-  });
-  setFormData("")
-  alert("Return accepted. If you haven't already, drop your instrument off at location [x] within 24 hours.")
+  }) 
+    .then(r => {
+    if(r.ok){
+      r.json().then((updatedItems) => {
+        onReturnLoan(updatedItems)
+        updateInstrument(loan.instrument_id)
+        setFormData("")
+        alert("Return accepted. If you haven't already, drop your instrument off at location [x] within 24 hours.")
+      })
+    }else {
+      r.json().then((err) => setErrors(err.errors));
     }
-
+  });
+  }
 
   return(
     <div className="return-instrument">

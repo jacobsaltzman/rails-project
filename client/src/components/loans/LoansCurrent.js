@@ -26,6 +26,8 @@ export default function LoansCurrent( {currentLoans, onEditInstrument, setErrors
               onEditInstrument(data);
               setErrors(false);
             });
+        }else {
+          response.json().then((err) => setErrors(err.errors));
         }
       });
   }
@@ -41,7 +43,7 @@ export default function LoansCurrent( {currentLoans, onEditInstrument, setErrors
         <p className='loan-began'>began on {loan.loan_began} </p>
           <div>
           <button onClick={handleIsSeen}>{isSeen? 'Nevermind':'Returning Instrument?'}</button>
-          {isSeen ? <LoanReturn onReturnLoan={onReturnLoan} updateInstrument={updateInstrument} loan={loan} /> : null} </div>
+          {isSeen ? <LoanReturn setErrors={setErrors} onReturnLoan={onReturnLoan} updateInstrument={updateInstrument} loan={loan} /> : null} </div>
   </div>
 ))}
 
