@@ -2,7 +2,7 @@ import {useState} from 'react'
 
 
 
-function LoanEdit({loan, onEditLoan}){
+function LoanEdit({loan, onEditLoan, setErrors}){
 
   const [isEditMode, setIsEditMode] = useState(false);
   const [formData, setFormData] = useState();
@@ -28,16 +28,20 @@ function LoanEdit({loan, onEditLoan}){
       body: JSON.stringify({
           experience: formData
       }),
-    }) //refactor for errors
-      .then((r) => r.json())
-      .then((updatedItems) => {
-        console.log(updatedItems)
-        onEditLoan(updatedItems)
+    }) 
+      .then(r => {
+        if(r.ok){
+          r.json().then((updatedItems) => {
+            onEditLoan(updatedItems)
+            setFormData("")
+            handleEditMode()
       //updateInstrument(loan.instrument_id)
-    });
-    setFormData("")
-    handleEditMode()
+      })
+    }else {
+      r.json().then((err) => setErrors(err.errors));
     }
+    });
+  }
 
 
   return(

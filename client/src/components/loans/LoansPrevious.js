@@ -14,7 +14,7 @@ export default function LoansPrevious( { setErrors, returnedLoans, onEditLoan })
         <p className='loan-began'>borrowed on: {loan.loan_began}</p>
         <p className='loan-experience'>your experience: </p>
         
-          <LoanEdit onEditLoan={onEditLoan} loan={loan} />
+          <LoanEdit setErrors={setErrors} onEditLoan={onEditLoan} loan={loan} />
         <p className='loan-updated'>(updated on: {loan.loan_updated})</p>
         
       </div>
