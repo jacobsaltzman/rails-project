@@ -14,7 +14,6 @@ function InstrumentPage({instruments, currentUser, onEditInstrument, setErrors, 
     const {id, name, condition, image, description} = instrument;
     const loanArr = instrument.loans
 
-    console.log(loanArr.length !==0)
   
     return (
       <div className="individual-instrument-page">
