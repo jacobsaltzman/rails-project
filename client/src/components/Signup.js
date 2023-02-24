@@ -28,7 +28,7 @@ function SignUp({ setCurrentUser }) {
                 })
             }else {
               //r.json().then((err) => setErrors(err.errors));
-              setErrors(r.statusText);
+              r.json().then(json => setErrors(Object.entries(json.errors)))
               //changing error read in attempt to debug Render deploy issue with signup.
             }
         })

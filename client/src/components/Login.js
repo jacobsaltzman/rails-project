@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 
-function Login({ setCurrentUser, currentUser }){
+function Login({ setCurrentUser }){
 
   const nav = useNavigate();
 
@@ -37,8 +37,8 @@ function Login({ setCurrentUser, currentUser }){
             nav(`/members/${data.id}`)
             })
         }else {
-          r.json().then((err) => setErrors(err.errors));
-            
+          setErrors(r.statusText + ": Invalid Username or Password");
+            console.log(r)
         }
         setFormData({
           username:'',
@@ -54,6 +54,7 @@ function Login({ setCurrentUser, currentUser }){
     <div className="login">
       <div>
         <h4>Sign In</h4>
+        {errors? <h6 className='errors'>{errors}</h6>:null}
           <form id="sign-in-form" onSubmit={handleSubmit}>
             <label>Username:</label>
             <input type='text' id='username-input' name='username' onChange={handleChange} value={formData.username}></input>
@@ -61,8 +62,9 @@ function Login({ setCurrentUser, currentUser }){
             <input type='password' id='password-input' name='password' onChange={handleChange}  value={formData.password}></input>
             <button type="submit">Submit</button>
           </form>
-          {errors? <h6 className='errors'>{errors}</h6>:null}
           <h6>Not a member? <Link to="/signup">Signup!</Link> </h6>
+      </div>
+      <div>
       </div>
     </div>
   )
