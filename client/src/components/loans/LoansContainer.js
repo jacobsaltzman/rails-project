@@ -19,12 +19,22 @@ function LoansContainer ({currentUser, onEditInstrument}){
     }
   }, [loans]);
 
+  function onDeleteLoan(deletedLoanId) {
+    const updatedLoans = currentLoans.filter((loan) => loan.id !== deletedLoanId);
+    setCurrentLoans(updatedLoans);
+  }
+
+
+    function onReturnLoan(loan){
+      onDeleteLoan(loan.id)
+      setReturnedLoans([...returnedLoans, loan])
+    }
 
     return (
       <div id='user-loans'>
         {errors && <div className="error">{errors}</div>}
         <div id='current-loans'>
-          <LoansCurrent setErrors={setErrors} setCurrentLoans={setCurrentLoans} currentLoans={currentLoans} onEditInstrument={onEditInstrument}/>
+          <LoansCurrent onReturnLoan={onReturnLoan} onDeleteLoan={onDeleteLoan} setErrors={setErrors} setCurrentLoans={setCurrentLoans} currentLoans={currentLoans} onEditInstrument={onEditInstrument}/>
         </div>
 
 
