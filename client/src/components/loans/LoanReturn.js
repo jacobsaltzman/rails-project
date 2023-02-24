@@ -22,7 +22,7 @@ function LoanReturn( {loan, updateInstrument, onReturnLoan} ){
         experience: formData,
         returned: true
     }),
-  }) //refactor for errors
+  }) //refactor for errors.
     .then((r) => r.json())
     .then((updatedItems) => {
     onReturnLoan(updatedItems)

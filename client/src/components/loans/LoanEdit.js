@@ -2,7 +2,7 @@ import {useState} from 'react'
 
 
 
-function LoanEdit({loan}){
+function LoanEdit({loan, onEditLoan}){
 
   const [isEditMode, setIsEditMode] = useState(false);
   const [formData, setFormData] = useState();
@@ -19,8 +19,25 @@ function LoanEdit({loan}){
   }
 
   function handleEditLoanClick(){
-    console.log(formData)
-  }
+    fetch(`/loans/${loan.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify({
+          experience: formData
+      }),
+    }) //refactor for errors
+      .then((r) => r.json())
+      .then((updatedItems) => {
+        console.log(updatedItems)
+        onEditLoan(updatedItems)
+      //updateInstrument(loan.instrument_id)
+    });
+    setFormData("")
+    handleEditMode()
+    }
 
 
   return(

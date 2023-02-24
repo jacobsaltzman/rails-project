@@ -30,6 +30,17 @@ function LoansContainer ({currentUser, onEditInstrument}){
       setReturnedLoans([...returnedLoans, loan])
     }
 
+    function onEditLoan(updatedLoan){
+      const updatedLoans = returnedLoans.map((loan) => {
+        if (loan.id === updatedLoan.id) {
+          return updatedLoan;
+        } else {
+          return loan;
+        }
+      });
+      setReturnedLoans(updatedLoans);
+    }
+
     return (
       <div id='user-loans'>
         {errors && <div className="error">{errors}</div>}
@@ -39,7 +50,7 @@ function LoansContainer ({currentUser, onEditInstrument}){
 
 
         <div id='previous-loans'>
-            <LoansPrevious setErrors={setErrors} returnedLoans={returnedLoans} />
+            <LoansPrevious onEditLoan={onEditLoan} setErrors={setErrors} returnedLoans={returnedLoans} />
         </div>
 
 

@@ -1,7 +1,7 @@
 import React from "react";
 import LoanEdit from "./LoanEdit";
 
-export default function LoansPrevious( { setErrors, returnedLoans }) {
+export default function LoansPrevious( { setErrors, returnedLoans, onEditLoan }) {
 
 
 
@@ -14,7 +14,7 @@ export default function LoansPrevious( { setErrors, returnedLoans }) {
         <p className='loan-began'>borrowed on: {loan.loan_began}</p>
         <p className='loan-experience'>your experience: </p>
         
-          <LoanEdit loan={loan} />
+          <LoanEdit onEditLoan={onEditLoan} loan={loan} />
         <p className='loan-updated'>(updated on: {loan.loan_updated})</p>
         
       </div>
