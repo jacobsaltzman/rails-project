@@ -1,12 +1,9 @@
-import {useState} from 'react'
+import React from "react";
+import LoanEdit from "./LoanEdit";
 
 export default function LoansPrevious( { setErrors, returnedLoans }) {
 
-  const [isEditMode, setIsEditMode] = useState(false);
 
-  function handleEditMode(){
-    setIsEditMode(!isEditMode)
-  }
 
   return (
     <div id='loans-previous'>
@@ -17,7 +14,7 @@ export default function LoansPrevious( { setErrors, returnedLoans }) {
         <p className='loan-began'>borrowed on: {loan.loan_began}</p>
         <p className='loan-experience'>your experience: </p>
         <h5>{loan.experience}</h5>
-        <button onClick={() => handleEditMode()}>Edit</button>
+          <LoanEdit />
         <p className='loan-updated'>(updated on: {loan.loan_updated})</p>
         
       </div>
