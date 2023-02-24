@@ -13,8 +13,8 @@ export default function LoansPrevious( { setErrors, returnedLoans }) {
         <h5>{loan.instrumentname}</h5>
         <p className='loan-began'>borrowed on: {loan.loan_began}</p>
         <p className='loan-experience'>your experience: </p>
-        <h5>{loan.experience}</h5>
-          <LoanEdit />
+        
+          <LoanEdit loan={loan} />
         <p className='loan-updated'>(updated on: {loan.loan_updated})</p>
         
       </div>
