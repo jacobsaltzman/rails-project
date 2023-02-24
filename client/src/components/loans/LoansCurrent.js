@@ -1,10 +1,14 @@
-//import {useState} from 'react'
+import {useState} from 'react'
 import LoanDeletion from './LoanDeletion'
 import LoanReturn from './LoanReturn';
 
 export default function LoansCurrent( {currentLoans, setCurrentLoans, onEditInstrument,setErrors} ) {
 
+  const [isSeen, setIsSeen] = useState(false);
 
+  function handleIsSeen(e){
+    setIsSeen(!isSeen)
+  }
 
   function onDeleteLoan(deletedLoanId) {
     const updatedLoans = currentLoans.filter((loan) => loan.id !== deletedLoanId);
@@ -39,9 +43,9 @@ export default function LoansCurrent( {currentLoans, setCurrentLoans, onEditInst
         <LoanDeletion updateInstrument={updateInstrument} setErrors={setErrors} onEditInstrument={onEditInstrument} onDeleteLoan={onDeleteLoan} loan={loan}/>
         <h5> {loan.instrumentname} </h5>
         <p className='loan-began'>began on {loan.loan_began} </p>
-          {loan.returned ? null : (
-            <LoanReturn loan={loan} />
-    )}
+          <div>
+          <button onClick={handleIsSeen}>{isSeen? 'Nevermind':'Returning Instrument?'}</button>
+          {isSeen ? <LoanReturn loan={loan} /> : null} </div>
   </div>
 ))}
 
