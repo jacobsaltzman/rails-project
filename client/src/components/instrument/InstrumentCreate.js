@@ -9,7 +9,7 @@ function InstrumentCreate({onAddInstrument, setErrors}){
   
   const[formData, setFormData] = useState({
     name: "",
-    condition: "Coming soon",
+    condition: "Available", //Changed from "coming soon" which is the realistic response, to "Available" immediately so the deployed version can immediately mess with it.
     image: "",
     description: ""
   })
