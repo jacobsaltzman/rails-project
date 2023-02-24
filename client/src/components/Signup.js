@@ -27,9 +27,7 @@ function SignUp({ setCurrentUser }) {
                   nav(`/members/${data.id}`)
                 })
             }else {
-              //r.json().then((err) => setErrors(err.errors));
               r.json().then(json => setErrors(Object.entries(json.errors)))
-              //changing error read in attempt to debug Render deploy issue with signup.
             }
         })
        
@@ -52,7 +50,7 @@ function SignUp({ setCurrentUser }) {
         <label>
          Email:
          </label>
-        <input type='text' name='email' value={formData.email} onChange={handleChange} />
+        <input type='email' name='email' value={formData.email} onChange={handleChange} />
        
         <label>
          Password:
