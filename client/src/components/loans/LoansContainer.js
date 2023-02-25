@@ -54,7 +54,7 @@ function LoansContainer ({currentUser, onEditInstrument, onEditInstrumentLoan, h
 
 
         <div id='previous-loans'>
-            <LoansPrevious onEditLoan={onEditLoan} setErrors={setErrors} returnedLoans={returnedLoans} />
+            <LoansPrevious handleUpdateCurrentUser={handleUpdateCurrentUser} currentUser={currentUser} onEditLoan={onEditLoan} setErrors={setErrors} returnedLoans={returnedLoans} />
         </div>
 
 

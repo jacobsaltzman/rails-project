@@ -2,7 +2,7 @@ import {useState} from 'react'
 
 
 
-function LoanEdit({loan, onEditLoan, setErrors}){
+function LoanEdit({loan, onEditLoan, setErrors, handleUpdateCurrentUser, currentUser}){
 
   const [isEditMode, setIsEditMode] = useState(false);
   const [formData, setFormData] = useState();
@@ -36,6 +36,17 @@ function LoanEdit({loan, onEditLoan, setErrors}){
             setFormData("")
             handleEditMode()
       //updateInstrument(loan.instrument_id)
+      const updatedUser = {
+        ...currentUser,
+        loans: currentUser.loans.map((loan) => {
+          if (loan.id === updatedItems.id) {
+            return updatedItems;
+          } else {
+            return loan;
+          }
+        })
+      };
+      handleUpdateCurrentUser(updatedUser)
       })
     }else {
       r.json().then((err) => setErrors(err.errors));
