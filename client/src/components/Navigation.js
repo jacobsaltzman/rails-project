@@ -1,14 +1,18 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function Navigation( {errors, currentUser, setCurrentUser, handleDarkMode, isDarkMode} ){
+
+  const nav = useNavigate();
+
 
   const handleLogout = () => {
     fetch('/logout', {
       method: 'DELETE'
     })
     setCurrentUser(false)
+    nav(`/`)
     };
   
 
