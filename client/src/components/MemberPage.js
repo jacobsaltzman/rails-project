@@ -2,7 +2,7 @@
 //import {useParams} from 'react-router-dom'
 import LoansContainer from "./loans/LoansContainer";
 
-function MemberPage({currentUser, onEditInstrument, onEditInstrumentLoan}){
+function MemberPage({currentUser, onEditInstrument, onEditInstrumentLoan, handleUpdateCurrentUser}){
 
 
   return(
@@ -10,7 +10,7 @@ function MemberPage({currentUser, onEditInstrument, onEditInstrumentLoan}){
     <h3>{currentUser.username}</h3>
     {!currentUser.creationDate ? <p>Sign in to see more.</p> : <p>Member since {currentUser.creationDate}</p>}
     
-    <LoansContainer onEditInstrumentLoan={onEditInstrumentLoan} currentUser={currentUser} onEditInstrument={onEditInstrument} />
+    <LoansContainer handleUpdateCurrentUser={handleUpdateCurrentUser} onEditInstrumentLoan={onEditInstrumentLoan} currentUser={currentUser} onEditInstrument={onEditInstrument} />
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-function LoanReturn( {loan, updateInstrument, onReturnLoan, setErrors} ){
+function LoanReturn( {loan, updateInstrument, onReturnLoan, setErrors, handleUpdateCurrentUser, currentUser} ){
 
   const [formData, setFormData] = useState();
 
@@ -29,6 +29,17 @@ function LoanReturn( {loan, updateInstrument, onReturnLoan, setErrors} ){
         onReturnLoan(updatedItems)
         updateInstrument(loan.instrument_id)
         setFormData("")
+        const updatedUser = {
+          ...currentUser,
+          loans: currentUser.loans.map((loan) => {
+            if (loan.id === updatedItems.id) {
+              return updatedItems;
+            } else {
+              return loan;
+            }
+          })
+        };
+        handleUpdateCurrentUser(updatedUser)
         alert("Return accepted. If you haven't already, drop your instrument off at location [x] within 24 hours.")
       })
     }else {

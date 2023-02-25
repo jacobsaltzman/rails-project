@@ -74,6 +74,10 @@ function onEditInstrument(update){
   setInstruments(updatedInstruments);
 }
 
+const handleUpdateCurrentUser = (updatedUser) => {
+  setCurrentUser(updatedUser);
+};
+
 function onAddLoan(loan) {
   setCurrentUser(prevState => ({
     ...prevState,
@@ -115,7 +119,7 @@ function onEditInstrumentLoan(loan) {
 
         <Route 
         path='/members/:id'
-        element={<MemberPage onEditInstrumentLoan={onEditInstrumentLoan} currentUser={currentUser} onEditInstrument={onEditInstrument}/>}
+        element={<MemberPage handleUpdateCurrentUser={handleUpdateCurrentUser} onEditInstrumentLoan={onEditInstrumentLoan} currentUser={currentUser} onEditInstrument={onEditInstrument}/>}
         />
 
         <Route

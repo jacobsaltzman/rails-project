@@ -2,13 +2,15 @@ import { useEffect, useState } from 'react';
 import LoansCurrent from './LoansCurrent';
 import LoansPrevious from './LoansPrevious';
 
-function LoansContainer ({currentUser, onEditInstrument, onEditInstrumentLoan}){
+function LoansContainer ({currentUser, onEditInstrument, onEditInstrumentLoan, handleUpdateCurrentUser}){
 
   const { loans } = currentUser;
   const [errors, setErrors] = useState(false)
 
   const [currentLoans, setCurrentLoans] = useState([]);
   const [returnedLoans, setReturnedLoans] = useState([]);
+
+
     
   useEffect(() => {
     if(loans){
@@ -47,7 +49,7 @@ function LoansContainer ({currentUser, onEditInstrument, onEditInstrumentLoan}){
       <div id='user-loans'>
         {errors && <div className="error">{errors}</div>}
         <div id='current-loans'>
-          <LoansCurrent onReturnLoan={onReturnLoan} onDeleteLoan={onDeleteLoan} setErrors={setErrors} setCurrentLoans={setCurrentLoans} currentLoans={currentLoans} onEditInstrument={onEditInstrument}/>
+          <LoansCurrent handleUpdateCurrentUser={handleUpdateCurrentUser} currentUser={currentUser} onReturnLoan={onReturnLoan} onDeleteLoan={onDeleteLoan} setErrors={setErrors} setCurrentLoans={setCurrentLoans} currentLoans={currentLoans} onEditInstrument={onEditInstrument}/>
         </div>
 
 

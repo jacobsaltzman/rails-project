@@ -2,7 +2,7 @@ import {useState} from 'react'
 import LoanDeletion from './LoanDeletion'
 import LoanReturn from './LoanReturn';
 
-export default function LoansCurrent( {currentLoans, onEditInstrument, setErrors, onDeleteLoan, onReturnLoan} ) {
+export default function LoansCurrent( {currentLoans, onEditInstrument, setErrors, onDeleteLoan, onReturnLoan, handleUpdateCurrentUser, currentUser} ) {
 
   const [isSeen, setIsSeen] = useState(false);
 
@@ -38,12 +38,12 @@ export default function LoansCurrent( {currentLoans, onEditInstrument, setErrors
       <h4>Current Loans</h4>
       {currentLoans.map((loan) => (
       <div className='current-loan' key={loan.id}>
-        <LoanDeletion updateInstrument={updateInstrument} setErrors={setErrors} onEditInstrument={onEditInstrument} onDeleteLoan={onDeleteLoan} loan={loan}/>
+        <LoanDeletion handleUpdateCurrentUser={handleUpdateCurrentUser} currentUser={currentUser} updateInstrument={updateInstrument} setErrors={setErrors} onEditInstrument={onEditInstrument} onDeleteLoan={onDeleteLoan} loan={loan}/>
         <h5> {loan.instrumentname} </h5>
         <p className='loan-began'>began on {loan.loan_began} </p>
           <div>
           <button onClick={handleIsSeen}>{isSeen? 'Nevermind':'Returning Instrument?'}</button>
-          {isSeen ? <LoanReturn setErrors={setErrors} onReturnLoan={onReturnLoan} updateInstrument={updateInstrument} loan={loan} /> : null} </div>
+          {isSeen ? <LoanReturn handleUpdateCurrentUser={handleUpdateCurrentUser} currentUser={currentUser} setErrors={setErrors} onReturnLoan={onReturnLoan} updateInstrument={updateInstrument} loan={loan} /> : null} </div>
   </div>
 ))}
 

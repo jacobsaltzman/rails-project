@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-function LoanDeletion({ setErrors, loan, onDeleteLoan, updateInstrument }) {
+function LoanDeletion({ setErrors, loan, onDeleteLoan, updateInstrument, handleUpdateCurrentUser, currentUser }) {
 
   const {id, instrument_id} = loan
   
@@ -20,6 +20,11 @@ function LoanDeletion({ setErrors, loan, onDeleteLoan, updateInstrument }) {
         if (res.ok) {
           onDeleteLoan(id)
           updateInstrument(instrument_id)
+          const updatedUser = {
+            ...currentUser,
+            loans: currentUser.loans.filter((loan) => loan.id !== id)
+          };
+          handleUpdateCurrentUser(updatedUser);
         } else {
           throw new Error('Network response was not ok');
         }
