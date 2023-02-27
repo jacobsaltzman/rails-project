@@ -4,7 +4,7 @@
 ## Description
 
 
-This project is a full stack web application built with a React frontend, PostgresSQL, and a Ruby on Rails
+This project is a full stack web application built with a React frontend, PostgresSQL database, and a Ruby on Rails
 backend that allows users to borrow instruments from the library and share their experiences with the community.
 
 
@@ -134,7 +134,8 @@ This project uses the Faker gem to spin up a ton of fake instruments and data. T
 - Search function for instruments and history.
 - Separate the 'experience' and 'loan' models to expand on both.
 - Add a 'locations' component, if there were multiple physical pickup locations.
-- Add 'admin' functionality to allow a super-user to make global changes to all the models and components. 
+- Add 'admin' functionality to allow a super-user to make global changes to all the models and components.
+- Allow a toggle to display loans and instruments in various order styles. 
 
 
 ###### Strumbrary, 2023
