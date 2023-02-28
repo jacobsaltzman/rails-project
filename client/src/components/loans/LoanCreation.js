@@ -1,6 +1,9 @@
-import React from 'react'
+import React, {useContext} from "react";
+import { UserContext } from '../../context/user';
 
-function LoanCreation ({id, currentUser, onEditInstrument, setErrors, onAddLoan}){
+function LoanCreation ({id, onEditInstrument, setErrors, onAddLoan}){
+
+  const {currentUser} = useContext(UserContext);
 
   function handleSubmit(e) {
     e.preventDefault();

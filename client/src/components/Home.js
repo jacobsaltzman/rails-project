@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
+import { UserContext } from "../context/user";
 import { Link } from 'react-router-dom';
 
 
-function Home({currentUser}){
+function Home(){
+
+  const {currentUser} = useContext(UserContext);
+  
+
   return (
     <div id="home">
       <div id="home-top-div"> 

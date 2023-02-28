@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { UserContext } from '../../context/user';
 
 
-function LoanReturn( {loan, updateInstrument, onReturnLoan, setErrors, handleUpdateCurrentUser, currentUser} ){
 
+function LoanReturn( {loan, updateInstrument, onReturnLoan, setErrors, handleUpdateCurrentUser } ){
+
+  const {currentUser} = useContext(UserContext);
   const [formData, setFormData] = useState();
 
   function handleChange(e) {

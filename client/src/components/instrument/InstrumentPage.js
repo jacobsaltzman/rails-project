@@ -3,8 +3,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import LoanCreation from "../loans/LoanCreation";
 
-function InstrumentPage({instruments, currentUser, onEditInstrument, setErrors, onAddLoan}){
+function InstrumentPage({instruments, onEditInstrument, setErrors, onAddLoan}){
 
+  
   const {instrumentId} = useParams();
   const instrumentArr = instruments.filter((instr) => Number(instr.id) === Number(instrumentId))
   const instrument = instrumentArr[0];
@@ -21,7 +22,7 @@ function InstrumentPage({instruments, currentUser, onEditInstrument, setErrors, 
         <h3>{name}</h3>
         <h5 className={condition}> {condition} </h5> 
         <div id="instrument-status">
-        {condition === "Available"? <LoanCreation onAddLoan={onAddLoan} setErrors={setErrors} id={id} currentUser={currentUser} onEditInstrument={onEditInstrument}/>:<p>Not available for borrow. Check back later.</p>}
+        {condition === "Available"? <LoanCreation onAddLoan={onAddLoan} setErrors={setErrors} id={id} onEditInstrument={onEditInstrument}/>:<p>Not available for borrow. Check back later.</p>}
         </div>
         
         <div className="image-container">

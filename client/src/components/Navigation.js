@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
+import { UserContext } from "../context/user";
 import { Link, useNavigate } from 'react-router-dom';
 
 
-function Navigation( {errors, currentUser, setCurrentUser, handleDarkMode, isDarkMode} ){
+
+function Navigation( {errors, handleDarkMode, isDarkMode} ){
 
   const nav = useNavigate();
+  const { currentUser, setCurrentUser } = useContext(UserContext);
 
 
   const handleLogout = () => {

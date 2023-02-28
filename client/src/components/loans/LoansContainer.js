@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { UserContext } from "../../context/user.js";
 import LoansCurrent from './LoansCurrent';
 import LoansPrevious from './LoansPrevious';
 
-function LoansContainer ({currentUser, onEditInstrument, onEditInstrumentLoan, handleUpdateCurrentUser}){
+function LoansContainer ({ onEditInstrument, onEditInstrumentLoan, handleUpdateCurrentUser}){
+
+  const {currentUser} = useContext(UserContext);
 
   const { loans } = currentUser;
   const [errors, setErrors] = useState(false)
@@ -18,7 +21,6 @@ function LoansContainer ({currentUser, onEditInstrument, onEditInstrumentLoan, h
     const returned = loans.filter((loan) => loan.returned);
     setCurrentLoans(current);
     setReturnedLoans(returned);
-    console.log(loans)
     }
   }, [loans]);
 
@@ -49,12 +51,12 @@ function LoansContainer ({currentUser, onEditInstrument, onEditInstrumentLoan, h
       <div id='user-loans'>
         {errors && <div className="error">{errors}</div>}
         <div id='current-loans'>
-          <LoansCurrent handleUpdateCurrentUser={handleUpdateCurrentUser} currentUser={currentUser} onReturnLoan={onReturnLoan} onDeleteLoan={onDeleteLoan} setErrors={setErrors} setCurrentLoans={setCurrentLoans} currentLoans={currentLoans} onEditInstrument={onEditInstrument}/>
+          <LoansCurrent handleUpdateCurrentUser={handleUpdateCurrentUser}  onReturnLoan={onReturnLoan} onDeleteLoan={onDeleteLoan} setErrors={setErrors} setCurrentLoans={setCurrentLoans} currentLoans={currentLoans} onEditInstrument={onEditInstrument}/>
         </div>
 
 
         <div id='previous-loans'>
-            <LoansPrevious handleUpdateCurrentUser={handleUpdateCurrentUser} currentUser={currentUser} onEditLoan={onEditLoan} setErrors={setErrors} returnedLoans={returnedLoans} />
+            <LoansPrevious handleUpdateCurrentUser={handleUpdateCurrentUser} onEditLoan={onEditLoan} setErrors={setErrors} returnedLoans={returnedLoans} />
         </div>
 
 

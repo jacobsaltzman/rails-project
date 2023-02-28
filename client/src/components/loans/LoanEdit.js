@@ -1,9 +1,11 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
+import { UserContext } from "../../context/user";
 
 
 
-function LoanEdit({loan, onEditLoan, setErrors, handleUpdateCurrentUser, currentUser}){
+function LoanEdit({loan, onEditLoan, setErrors, handleUpdateCurrentUser }){
 
+  const {currentUser} = useContext(UserContext);
   const [isEditMode, setIsEditMode] = useState(false);
   const [formData, setFormData] = useState();
 

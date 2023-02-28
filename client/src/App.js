@@ -1,6 +1,6 @@
 
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Route, Routes } from "react-router-dom";
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
@@ -11,11 +11,13 @@ import SignUp from './components/Signup';
 import MemberPage from './components/MemberPage';
 import Instruments from './components/instrument/Instruments';
 import InstrumentPage from './components/instrument/InstrumentPage';
+import { UserContext } from './context/user';
 
 function App() {
 
   const [instruments, setInstruments] = useState([]);
-  const [currentUser, setCurrentUser] = useState(false);
+  //const [currentUser, setCurrentUser] = useState(false);
+  const { setCurrentUser } = useContext(UserContext);
   const [errors, setErrors] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
 
@@ -34,7 +36,7 @@ function App() {
       .catch((error) => {
         console.error("Error during auto-login:", error);
       });
-  }, []);  
+  }, [setCurrentUser]);  
 
 
 useEffect(()=> {
@@ -107,19 +109,19 @@ function onEditInstrumentLoan(loan) {
 
   return (
     <div className='App'>
-      <Navigation errors={errors} isDarkMode={isDarkMode} handleDarkMode={handleDarkMode} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+      <Navigation errors={errors} isDarkMode={isDarkMode} handleDarkMode={handleDarkMode} />
     
       <div className={isDarkMode ? "main-content-dark" : "main-content"}>
       <Routes>
 
         <Route
           path='/'
-          element={<Home currentUser={currentUser} />}
+          element={<Home />}
         />
 
         <Route 
         path='/members/:id'
-        element={<MemberPage handleUpdateCurrentUser={handleUpdateCurrentUser} onEditInstrumentLoan={onEditInstrumentLoan} currentUser={currentUser} onEditInstrument={onEditInstrument}/>}
+        element={<MemberPage handleUpdateCurrentUser={handleUpdateCurrentUser} onEditInstrumentLoan={onEditInstrumentLoan} onEditInstrument={onEditInstrument}/>}
         />
 
         <Route
@@ -129,17 +131,17 @@ function onEditInstrumentLoan(loan) {
 
         <Route
         path='/instruments/:instrumentId'
-        element={<InstrumentPage onAddLoan={onAddLoan} setErrors={setErrors} currentUser={currentUser} instruments={instruments} onEditInstrument={onEditInstrument}/>}
+        element={<InstrumentPage onAddLoan={onAddLoan} setErrors={setErrors} instruments={instruments} onEditInstrument={onEditInstrument}/>}
         />
 
         <Route
         path='/signup'
-        element={<SignUp setCurrentUser={setCurrentUser}/>}
+        element={<SignUp />}
         />
 
         <Route
           path='/login'
-          element={<Login setCurrentUser={setCurrentUser} currentUser={currentUser}/>}
+          element={<Login />}
         />
 
         <Route

@@ -1,10 +1,13 @@
-import React from 'react'
+import {useContext} from 'react'
+import { UserContext } from '../../context/user';
 
 
 
-function LoanDeletion({ setErrors, loan, onDeleteLoan, updateInstrument, handleUpdateCurrentUser, currentUser }) {
+function LoanDeletion({ setErrors, loan, onDeleteLoan, updateInstrument, handleUpdateCurrentUser }) {
 
   const {id, instrument_id} = loan
+  const {currentUser} = useContext(UserContext);
+
   
   const handleDeleteLoan = (e) => {
     e.preventDefault();

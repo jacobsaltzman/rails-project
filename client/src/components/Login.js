@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import { UserContext } from "../context/user";
 import { Link, useNavigate } from 'react-router-dom';
 
 
 
-function Login({ setCurrentUser }){
+function Login(){
+
+  const {setCurrentUser} = useContext(UserContext);
 
   const nav = useNavigate();
 
