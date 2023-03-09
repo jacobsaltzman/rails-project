@@ -6,6 +6,9 @@ function MemberPage({ onEditInstrument, onEditInstrumentLoan, handleUpdateCurren
 
   const {currentUser} = useContext(UserContext);
 
+  console.log(currentUser)
+
+  if(currentUser){
 
   return(
     <div id='current-user-header'>
@@ -15,6 +18,13 @@ function MemberPage({ onEditInstrument, onEditInstrumentLoan, handleUpdateCurren
     <LoansContainer handleUpdateCurrentUser={handleUpdateCurrentUser} onEditInstrumentLoan={onEditInstrumentLoan} onEditInstrument={onEditInstrument} />
     </div>
   )
+
+  } else{
+    return <p>loading...</p>
+  }
+
+
 }
+
 
 export default MemberPage;

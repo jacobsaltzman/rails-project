@@ -18,8 +18,8 @@ class LoansController < ApplicationController
 
   def update
     loan = Loan.find(params[:id])
-    loan.update(loan_params)
-    render json: loan, status: :ok
+    loan.update!(loan_params)
+    render json: loan, status: :accepted
   end
 
 
